@@ -1,0 +1,36 @@
+[submodule "bundle/minibufexpl"]
+	path = bundle/minibufexpl
+	url = https://github.com/sontek/minibufexpl.vim.git
+[submodule "bundle/fugitive"]
+	path = bundle/fugitive
+	url = http://github.com/tpope/vim-fugitive.git
+[submodule "bundle/ctrlp"]
+	path = bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule "bundle/airline"]
+	path = bundle/airline
+	url = https://github.com/bling/vim-airline.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "bundle/tmuxline"]
+	path = bundle/tmuxline
+	url = https://github.com/edkolev/tmuxline.vim.git
+[submodule "bundle/pydoc"]
+	path = bundle/pydoc
+	url = https://github.com/fs111/pydoc.vim.git
+[submodule "bundle/nerdcoommenter"]
+	path = bundle/nerdcoommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/autopep8"]
+	path = bundle/autopep8
+	url = https://github.com/tell-k/vim-autopep8.git
+[submodule "bundle/vim-dispatch"]
+	path = bundle/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git
+[submodule "bundle/dwm"]
+	path = bundle/dwm
+	url = https://github.com/spolu/dwm.vim.git
+[submodule "bundle/YouComplete/YouCompleteMe"]
+	path = bundle/YouComplete/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
