@@ -19,9 +19,6 @@
 [submodule "bundle/pydoc"]
 	path = bundle/pydoc
 	url = https://github.com/fs111/pydoc.vim.git
-[submodule "bundle/nerdcoommenter"]
-	path = bundle/nerdcoommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "bundle/autopep8"]
 	path = bundle/autopep8
 	url = https://github.com/tell-k/vim-autopep8.git
@@ -31,3 +28,9 @@
 [submodule "bundle/dwm"]
 	path = bundle/dwm
 	url = https://github.com/spolu/dwm.vim.git
+[submodule "bundle/YouCompleteMe"]
+	path = bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "bundle/nerdCommenter"]
+	path = bundle/nerdCommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
