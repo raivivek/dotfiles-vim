@@ -31,3 +31,6 @@
 [submodule "bundle/nerdCommenter"]
 	path = bundle/nerdCommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/minibufexpl"]
+	path = bundle/minibufexpl
+	url = https://github.com/techlivezheng/vim-plugin-minibufexpl.git
