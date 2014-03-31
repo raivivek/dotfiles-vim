@@ -18,8 +18,8 @@ Installation
     cd .vim
     git submodule init
     git submodule update
-    git submodule foreach submodule init
-    git submodule foreach submodule update
+    git submodule foreach git submodule init
+    git submodule foreach git submodule update
 
 Although I do not plan to add anything new at the moment, you can see frequent
 changes in the .(g)vimrc file.
