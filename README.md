@@ -21,6 +21,10 @@ Installation
     git submodule foreach git submodule init
     git submodule foreach git submodule update
 
+*Symlinks*
+    ln -s ~/.vim/.vimrc ~/.vimrc
+    ln -s ~/.vim/.gvimrc ~/.gvimrc
+
 Although I do not plan to add anything new at the moment, you can see frequent
 changes in the .(g)vimrc file.
 
