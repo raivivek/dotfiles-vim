@@ -4,11 +4,11 @@ newer one. I will briefly list the changes here.
 
 Changes
 -------
-* .git tree structure was disrupted because of my experiments with git. Now all
+* `.git` tree structure was disrupted because of my experiments with git. Now all
 the plugins are imported as submodules to ensure that you get the latest and
 stable versions.
-* Plugins were selected very carefully and tweaked particularly.
-* Update Vim to latest version 7.4.227.
+* Plugins were selected carefully and useful options were set.
+* Updated Vim to latest version 7.4.227.
 * Revamped .vimrc, removed redundant entries, streamlined plugin options.
 * Molokai to be used as default theme.
 
@@ -22,6 +22,7 @@ Installation
     git submodule foreach git submodule update
 
 *Symlinks*
+
     ln -s ~/.vim/.vimrc ~/.vimrc
     ln -s ~/.vim/.gvimrc ~/.gvimrc
 
