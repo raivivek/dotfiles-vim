@@ -68,7 +68,8 @@ set showmatch
 set smartcase
 set smarttab
 set showcmd
-set hlsearch
+set incsearch
+" set hlsearch
 
 set confirm
 set pastetoggle=<F2>
@@ -127,11 +128,11 @@ set hidden
 set history=50
 set clipboard=unnamedplus
 set nobackup
-
+set wildchar=<Tab> wildmenu wildmode=full
 set complete=.,w,t
 
-set wildmenu
-set wildmode=list:longest
+"set wildmenu
+"set wildmode=list:longest
 set wildignore+=.hg,.git,.svn " Version Controls"
 set wildignore+=*.aux,*.out,*.toc "Latex Indermediate files"
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg "Binary Imgs"
