@@ -68,6 +68,7 @@ set showmatch
 set smartcase
 set smarttab
 set showcmd
+set hlsearch
 
 set confirm
 set pastetoggle=<F2>
@@ -77,15 +78,23 @@ set laststatus=2
 set timeoutlen=50
 set autoread
 
-set visualbell
+set novisualbell
+set visualbell t_vb=
 set ruler
 
 set cindent
+set t_RV=
 
 if exists("+spelllang")
   set spelllang=en_us
 endif
 set spellfile=~/.vim/spell/en.utf-8.add
+"
+" Map ctrl-movement keys to window switching
+map <C-k> <C-w><k>
+map <C-j> <C-w><j>
+map <C-l> <C-w><l>
+map <C-h> <C-w><h>
 
 set wrap
 if has('statusline')

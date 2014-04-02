@@ -34,9 +34,6 @@
 [submodule "bundle/nerdTree"]
 	path = bundle/nerdTree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "bundle/vim-bufferline"]
-	path = bundle/vim-bufferline
-	url = https://github.com/bling/vim-bufferline.git
 [submodule "bundle/autoPairs"]
 	path = bundle/autoPairs
 	url = https://github.com/jiangmiao/auto-pairs.git
