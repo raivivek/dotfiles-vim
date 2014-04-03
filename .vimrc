@@ -52,8 +52,9 @@ if executable('ag')
 endif
 
 " Display extra whitespace
-set list listchars=tab:»·
-set fillchars+=stl:\ ,stlnc:\
+" set fillchars+=stl:\ ,stlnc:\
+set list listchars=tab:▸\ ,eol:¬         " Invisibles using the Textmate style
+
 set autowrite
 
 colorscheme molokai 
@@ -92,10 +93,10 @@ endif
 set spellfile=~/.vim/spell/en.utf-8.add
 "
 " Map ctrl-movement keys to window switching
-map <C-k> <C-w><k>
-map <C-j> <C-w><j>
-map <C-l> <C-w><l>
-map <C-h> <C-w><h>
+"map <C-k> <C-w><k>
+"map <C-j> <C-w><j>
+"map <C-l> <C-w><l>
+"map <C-h> <C-w><h>
 
 set wrap
 if has('statusline')
@@ -156,8 +157,12 @@ let g:ctrlp_map = '<c-p>'
 
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tmuxline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+set tags=./tags;/
+
 
 " Theme
 let g:molokai_original = 1
 let g:rehas256 = 1
 " set background=dark
+let g:dwm_map_keys=1
