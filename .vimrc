@@ -170,6 +170,12 @@ let g:ctrlp_map = '<c-p>'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tmuxline#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
+
+" Fixes issue with strange character appearing in place of space
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
 set tags=./tags;/
 
 " To close the error window when using :bdelete command
