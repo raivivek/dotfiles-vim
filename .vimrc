@@ -1,5 +1,3 @@
-set nocompatible
-
 call pathogen#infect()
 :Helptags
 
@@ -75,6 +73,7 @@ set incsearch
 set confirm
 set pastetoggle=<F2>
 set number
+set relativenumber
 set laststatus=2
 
 set timeoutlen=50
