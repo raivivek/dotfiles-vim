@@ -52,6 +52,12 @@ If however you do not want to use these plugins, then remove these submodules fr
 
 In order to save all this trouble, I have also added a `vimrc_stripped` file with relevant sections removed, so that you do not need an extra configuration. Please use this file directly.
 
+Screenshot
+----------
+The following is a screenshot of vim in terminal (using tmux) with Python Koans file open.
+
+![vim](koans.png "Screenshot of Vim with Python Koans file")
+
 Feedback
 --------
 Feel free to drop fork, modify or suggest any changes you like.
