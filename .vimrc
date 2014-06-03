@@ -136,6 +136,9 @@ set nobackup
 set nowritebackup " Writes the buffer to the same file
 set noswapfile
 
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+
 set wildchar=<Tab> wildmenu wildmode=full
 set complete=.,w,t
 
