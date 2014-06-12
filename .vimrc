@@ -193,3 +193,7 @@ let g:dwm_map_keys=1
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_goto_buffer_command='vertical-split'
+
+" Settings for Vim-notes
+let g:notes_directories = ['~/my_coding/Notes']
+let g:notes_title_sync = 'rename_file'
