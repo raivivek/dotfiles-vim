@@ -34,20 +34,6 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 augroup END
 
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
-
-" Display extra whitespace
-" set fillchars+=stl:\ ,stlnc:\
 set list listchars=tab:▸\ ,eol:¬         " Invisibles using the Textmate style
 
 set autowrite
@@ -156,10 +142,6 @@ set wildignore+=migrations "Django migrations"
 set wildignore+=*.pyc "Python Object codes"
 set wildignore+=*.orig "Merge resolution files"
 
-" Set it to 0 if your tags are on a network directory
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-
 nnoremap <F9> :NERDTreeToggle<cr>
 let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$']
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -182,26 +164,13 @@ nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
 cabbrev <silent> bd lclose\|bdelete
 let g:syntastic_always_populate_loc_list = 1 "Update location list
 
-
 " Theme
 let g:molokai_original = 1
 let g:rehas256 = 1
-" set background=dark
-let g:dwm_map_keys=1
-" let g:ycm_server_use_vim_stdout = 1
-" let g:ycm_server_log_level = 'debug'
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_goto_buffer_command='vertical-split'
 
-" Settings for Vim-notes
+" Dwm
+let g:dwm_map_keys=1
+
+" Vim-notes
 let g:notes_directories = ['~/my_coding/Notes']
 let g:notes_title_sync = 'rename_file'
-
-" Settings for UltiSnips
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetsDir="~/.vim/bundle/vim-snippets/UltiSnips"
-
