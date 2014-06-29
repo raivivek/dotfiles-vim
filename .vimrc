@@ -197,3 +197,11 @@ let g:ycm_goto_buffer_command='vertical-split'
 " Settings for Vim-notes
 let g:notes_directories = ['~/my_coding/Notes']
 let g:notes_title_sync = 'rename_file'
+
+" Settings for UltiSnips
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetsDir="~/.vim/bundle/vim-snippets/UltiSnips"
+
