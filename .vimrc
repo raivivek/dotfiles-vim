@@ -51,7 +51,7 @@ set smartcase
 set smarttab
 set showcmd
 set incsearch
-" set hlsearch
+set wrap
 
 set confirm
 set pastetoggle=<F2>
@@ -73,14 +73,7 @@ if exists("+spelllang")
   set spelllang=en_us
 endif
 set spellfile=~/.vim/spell/en.utf-8.add
-"
-" Map ctrl-movement keys to window switching
-"map <C-k> <C-w><k>
-"map <C-j> <C-w><j>
-"map <C-l> <C-w><l>
-"map <C-h> <C-w><h>
 
-set wrap
 if has('statusline')
   set laststatus=2
   " Broken down into easily includeable segments
@@ -106,7 +99,6 @@ set title
 
 
 set lazyredraw
-" set confirm
 set viminfo='20,\"500
 set hidden
 set history=50
