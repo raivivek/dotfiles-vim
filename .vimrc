@@ -34,7 +34,10 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 augroup END
 
-set list listchars=tab:▸\ ,eol:¬         " Invisibles using the Textmate style
+" Display extra whitespace
+set fillchars+=stl:\ ,stlnc:\
+set list listchars=tab:▸\ ,trail:·,eol:¬         " Invisibles using the Textmate style
+set mps+=<:>
 
 set autowrite
 
@@ -51,7 +54,7 @@ set smartcase
 set smarttab
 set showcmd
 set incsearch
-set wrap
+" set hlsearch
 
 set confirm
 set pastetoggle=<F2>
@@ -59,7 +62,7 @@ set number
 set laststatus=2
 set norelativenumber
 
-set timeoutlen=50
+set timeoutlen=400
 set autoread
 
 set novisualbell
@@ -73,7 +76,8 @@ if exists("+spelllang")
   set spelllang=en_us
 endif
 set spellfile=~/.vim/spell/en.utf-8.add
-
+"
+set wrap
 if has('statusline')
   set laststatus=2
   " Broken down into easily includeable segments
@@ -85,7 +89,6 @@ if has('statusline')
   set statusline+=%#warningmsg#
   set statusline+=%{SyntasticStatuslineFlag()}
   set statusline+=%*
-  let g:syntastic_enable_signs=1
   set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 endif
 
@@ -96,9 +99,11 @@ au VimResized * :wincmd =
 au FocusLost * :wa
 let mapleader=','
 set title
-
+set cursorcolumn
+set cursorline
 
 set lazyredraw
+" set confirm
 set viminfo='20,\"500
 set hidden
 set history=50
@@ -116,6 +121,10 @@ set noswapfile
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
+
+" Do not leave visual mode after visually shifting text
+vnoremap < <gv
+vnoremap > >gv
 
 set wildchar=<Tab> wildmenu wildmode=full
 set complete=.,w,t
@@ -154,15 +163,11 @@ set tags=./tags;/
 " ( For syntastic plugin )
 nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
 cabbrev <silent> bd lclose\|bdelete
-let g:syntastic_always_populate_loc_list = 1 "Update location list
 
 " Theme
 let g:molokai_original = 1
 let g:rehas256 = 1
 
-" Dwm
-let g:dwm_map_keys=1
-
-" Vim-notes
+" Settings for Vim-notes
 let g:notes_directories = ['~/my_coding/Notes']
 let g:notes_title_sync = 'rename_file'
