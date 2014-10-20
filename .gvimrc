@@ -7,4 +7,5 @@ set guioptions-=L
 set guioptions+=a
 set guioptions-=m
 
+colorscheme solarized
 set background=dark
