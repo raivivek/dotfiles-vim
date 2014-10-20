@@ -58,9 +58,6 @@ little more configuration on behalf of user.
 compiled component. After completing steps mentioned above, please refer to
 [this page] (https://github.com/Valloric/YouCompleteMe#full-installation-guide)
 and follow the instructions accordingly.
-* `CtrlP` plugin uses the Silver Searcher for fast rendering of results. You may
-wish to install it separately if you want to use that feature. Please note that
-in case latter is unavailable, `CtrlP` continues to work.
 * If you see strange characters in status line or improper appearance then
 please see the [FAQs] (https://github.com/bling/vim-airline/wiki/FAQ) for the
 `vim-airline` plugin.
@@ -78,7 +75,9 @@ from your `git` repository and comment/remove the following section from your
     let g:airline#extensions#tmuxline#enabled = 1
     let g:airline#extensions#tabline#enabled = 1
 
-In order to save all this trouble, I have also added a `vimrc_stripped` file with relevant sections removed, so that you do not need an extra configuration. Please use this file directly.
+In order to save all this trouble, I have created another `minimal` branch where
+you can get all the necessary settings without these plugins. See the
+instructions below.
 
 ### (For `minimal` branch)
 * If you see strange characters in status line or improper appearance then
