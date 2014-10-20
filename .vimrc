@@ -8,7 +8,7 @@ filetype plugin on
 set encoding=utf-8
 "
 " Display extra whitespace
-set fillchars+=stl:\ ,stlnc:\
+"set fillchars+=stl:\ ,stlnc:\
 set list listchars=tab:▸\ ,trail:·,eol:¬         " Invisibles using the Textmate style
 set mps+=<:>
 "
@@ -140,20 +140,6 @@ if exists("+spelllang")
 endif
 set spellfile=~/.vim/spell/en.utf-8.add
 "
-if has('statusline')
-  set laststatus=2
-  " Broken down into easily includeable segments
-  set statusline=%<%f\    " Filename
-  set statusline+=%w%h%m%r " Options
-  set statusline+=%{fugitive#statusline()} "  Git Hotness
-  set statusline+=\ [%{&ff}/%Y]            " filetype
-  set statusline+=\ [%{getcwd()}]          " current dir
-  set statusline+=%#warningmsg#
-  set statusline+=%{SyntasticStatuslineFlag()}
-  set statusline+=%*
-  set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
-endif
-"
 au VimResized * :wincmd =
 "
 au FocusLost * :wa
@@ -188,6 +174,10 @@ let g:ctrlp_map = '<c-p>'
 " vim-airline
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
+if !exists('g:airline_symbols')
+   let g:airline_symbols = {}
+ endif
+let g:airline_symbols.space="\u3000"
 "
 set tags=./tags;/
 "
