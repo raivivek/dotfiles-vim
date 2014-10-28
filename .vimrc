@@ -1,5 +1,4 @@
 call pathogen#infect()
-:Helptags
 
 filetype on
 filetype plugin indent on
@@ -8,8 +7,8 @@ filetype plugin on
 set encoding=utf-8
 "
 " Display extra whitespace
-"set fillchars+=stl:\ ,stlnc:\
-set list listchars=tab:▸\ ,trail:·,eol:¬         " Invisibles using the Textmate style
+"set fillchars+=stl:\ ,stlnc: 
+set list listchars=tab:▸\ ,trail:·,eol:¬
 set mps+=<:>
 "
 set autowrite
@@ -32,9 +31,8 @@ set incsearch
 set confirm
 set number
 set laststatus=2
-set norelativenumber
 "
-set timeoutlen=500
+set timeout timeoutlen=500 ttimeoutlen=1
 set autoread
 "
 set novisualbell
@@ -57,6 +55,9 @@ set clipboard=unnamedplus
 "
 set foldmethod=indent
 set foldlevel=99
+"
+" Minimal number of screen lines to keep above and below the cursor
+set scrolloff=10
 "
 " Instead of these two options, we can set a single directory for all backups
 " and temporary buffers. This is a better solution in case we don't want our
@@ -83,7 +84,7 @@ set pastetoggle=<F2>
 noremap j gj
 noremap k gk
 "
-" Allow saving of files as sudo when I forgot to start vim using sudo.
+" Allow saving of files as sudo when I forget to start vim using sudo.
 cmap w!! :w !sudo tee > /dev/null %
 "
 " Do not leave visual mode after visually shifting text
@@ -95,7 +96,7 @@ nmap <Leader>tt :tabnew<cr>
 nmap <Leader>tn :tabnext<cr>
 nmap <Leader>tp :tabprevious<cr>
 nmap <Leader>tc :tabclose<cr>
-
+"
 """ Commands
 "
 " Set syntax if terminal supports colors
@@ -140,6 +141,11 @@ if exists("+spelllang")
 endif
 set spellfile=~/.vim/spell/en.utf-8.add
 "
+if has('gui_running')
+  set guifont=Droid\ Sans\ Mono\ 10
+endif
+"
+"
 au VimResized * :wincmd =
 "
 au FocusLost * :wa
@@ -163,32 +169,30 @@ set wildignore+=*.orig "Merge resolution files"
 
 """ Plugin specific settings
 "
-" nerdTree
+"" nerdTree
 nnoremap <F9> :NERDTreeToggle<cr>
-let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$']
+let NERDTreeIgnore=['\~$', '\.swp$', '\.git', '\.vim$', '\~$', '\.pyc$']
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 "
-" ctrl-p
-let g:ctrlp_map = '<c-p>'
 "
-" vim-airline
+"" vim-airline
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
-if !exists('g:airline_symbols')
+ if !exists('g:airline_symbols')
    let g:airline_symbols = {}
  endif
 let g:airline_symbols.space="\u3000"
 "
 set tags=./tags;/
 "
-" To close the error window when using :bdelete command
+"" To close the error window when using :bdelete command
 " ( For syntastic plugin )
 nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
 cabbrev <silent> bd lclose\|bdelete
 "
-" Theme
+"" Theme
 let g:molokai_original = 1
 let g:rehash256 = 1
 "
-" Settings for Vim-notes
+"" Settings for Vim-notes
 let g:notes_title_sync = 'rename_file'
