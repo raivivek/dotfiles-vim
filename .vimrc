@@ -1,29 +1,35 @@
 call plug#begin('~/.vim/plugged')
 "
-" On-demand loading
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" always enabled
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
 Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'xolox/vim-misc'
-Plug 'xolox/vim-notes'
-Plug 'chrisbra/NrrwRgn', { 'on': 'NrrwRgn' }
-Plug 'godlygeek/tabular'
-Plug 'mtth/scratch.vim', { 'on': 'Scratch' }
-Plug 'Shougo/unite.vim'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tpope/vim-surround'
-Plug 'pangloss/vim-javascript', {'for': 'javascript'}
-Plug 'tpope/vim-endwise', {'for': 'ruby'}
-Plug 'bitc/vim-hdevtools', { 'for': 'haskell' }
 Plug 'docunext/closetag.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'altercation/vim-colors-solarized'
 Plug 'tomtom/quickfixsigns_vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Valloric/YouCompleteMe'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'tpope/vim-repeat'
+Plug 'godlygeek/tabular'
+Plug 'Shougo/unite.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-surround'
+" on-demand loading
+Plug 'sjl/gundo.vim', {'on': 'GundoToggle'}
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'xolox/vim-notes', {'on': 'Notes'}
+Plug 'chrisbra/NrrwRgn', { 'on': 'NrrwRgn' }
+Plug 'mtth/scratch.vim', { 'on': 'Scratch' }
+" filetype specific plugins
+Plug 'pangloss/vim-javascript', {'for': ['javascript', 'js']}
+Plug 'itspriddle/vim-jquery', {'for': ['javascript', 'js']}
+Plug 'tpope/vim-endwise', {'for': 'ruby'}
+Plug 'bitc/vim-hdevtools', { 'for': 'haskell' }
 
 call plug#end()
 
@@ -292,3 +298,6 @@ nnoremap <silent> [unite]b :<C-u>Unite -quick-match buffer<CR>
 au FileType haskell nnoremap <buffer> <Leader>ht :HdevtoolsType<CR>
 au FileType haskell nnoremap <buffer> <silent> <Leader>hc :HdevtoolsClear<CR>
 au FileType haskell nnoremap <buffer> <silent> <Leader>hi :HdevtoolsInfo<CR>
+"
+"" gundo
+nnoremap <F5> :GundoToggle<CR>
