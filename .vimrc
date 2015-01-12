@@ -41,17 +41,18 @@ set encoding=utf-8
 "
 " Display extra whitespace
 "set fillchars+=stl:\ ,stlnc: 
-set list listchars=tab:▸\ ,trail:·,eol:¬
+set list listchars=tab:▸\ ,trail:·
 set mps+=<:>
 "
 set autowrite
 "
 colorscheme Monokai
 "
-set tabstop=4
+set tabstop=2
 set backspace=2
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
+set shiftround
 set expandtab
 set wrap
 "
@@ -178,7 +179,7 @@ endif
 set spellfile=~/.vim/spell/en.utf-8.add
 "
 if has('gui_running')
-  set guifont=Droid\ Sans\ Mono\ 10
+  set guifont=Droid\ Sans\ Mono\ 9
 endif
 "
 "
@@ -225,13 +226,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 "
 "
 "" vim-airline
-let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
- if !exists('g:airline_symbols')
-   let g:airline_symbols = {}
- endif
-" fix strange characters in status bar error
-let g:airline_symbols.space="\u3000"
+"let g:airline_powerline_fonts=1
 "
 set tags=./tags;/
 "
