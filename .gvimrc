@@ -6,5 +6,5 @@ set guioptions-=L
 set guioptions+=a
 set guioptions-=m
 
-colorscheme Monokai
-set background=dark
+colorscheme solarized
+set background=light

@@ -10,13 +10,16 @@ Installation
 ============
 
 * Clone the repository
+
   ```$ git clone https://github.com/vivekiitkgp/Dotfiles-vim.git```
 
-* Symlink the .(g)vimrc files from this directory to your home directory.
+* Symlink the `.(g)vimrc` files from this directory to your home directory.
 
-* Open any (g)vim instance and run `:PlugInstall`. (Don't worry if it shows a
-  lot of errors. It's because the plugins haven't been setup yet). It will automatically clone
-  and install all the relevant plugins into the `plugged/` directory.
+* Open any (g)vim instance and run `:PlugInstall`. You may optionally have to
+  clean the plugged directory using `:PlugClean` command (Don't worry if it
+  shows a lot of errors. It's because the plugins haven't been setup yet).
+  It will automatically clone and install all the relevant plugins into the
+  `plugged/` directory.
 
 * Close and start again. You're done!
 

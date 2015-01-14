@@ -19,23 +19,26 @@ Plug 'godlygeek/tabular'
 Plug 'Shougo/unite.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
+Plug 'othree/html5.vim'
+Plug 'mattn/gist-vim'
 " on-demand loading
 Plug 'sjl/gundo.vim', {'on': 'GundoToggle'}
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', {'on':  'NERDTreeToggle'}
 Plug 'xolox/vim-notes', {'on': 'Notes'}
-Plug 'chrisbra/NrrwRgn', { 'on': 'NrrwRgn' }
-Plug 'mtth/scratch.vim', { 'on': 'Scratch' }
+Plug 'chrisbra/NrrwRgn', {'on': 'NrrwRgn'}
+Plug 'mtth/scratch.vim', {'on': 'Scratch'}
 " filetype specific plugins
+Plug 'othree/javascript-libraries-syntax.vim', {'for': ['javascript', 'js']}
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'js']}
 Plug 'itspriddle/vim-jquery', {'for': ['javascript', 'js']}
-Plug 'tpope/vim-endwise', {'for': 'ruby'}
-Plug 'bitc/vim-hdevtools', { 'for': 'haskell' }
+Plug 'bitc/vim-hdevtools', {'for': 'haskell'}
+Plug 'fs111/pydoc.vim', {'for': 'python'}
 
 call plug#end()
 
 filetype on
-filetype plugin indent on
 filetype plugin on
+filetype plugin indent on
 
 set encoding=utf-8
 "
@@ -46,7 +49,7 @@ set mps+=<:>
 "
 set autowrite
 "
-colorscheme Monokai
+colorscheme solarized
 "
 set tabstop=2
 set backspace=2
