@@ -5,7 +5,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
 Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdcommenter'
-Plug 'jiangmiao/auto-pairs'
+"Plug 'jiangmiao/auto-pairs'
 Plug 'xolox/vim-misc'
 Plug 'docunext/closetag.vim'
 Plug 'Lokaltog/vim-easymotion'
@@ -21,6 +21,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
 Plug 'othree/html5.vim'
 Plug 'mattn/gist-vim'
+Plug 'ervandew/matchem'
 " on-demand loading
 Plug 'sjl/gundo.vim', {'on': 'GundoToggle'}
 Plug 'scrooloose/nerdtree', {'on':  'NERDTreeToggle'}
@@ -51,12 +52,11 @@ set autowrite
 "
 colorscheme solarized
 "
-set tabstop=2
 set backspace=2
+set expandtab
 set shiftwidth=2
 set softtabstop=2
 set shiftround
-set expandtab
 set wrap
 "
 set showmatch
@@ -66,6 +66,7 @@ set showcmd
 set incsearch
 "
 set confirm
+set cmdheight=2
 set number
 set laststatus=2
 "
@@ -76,7 +77,6 @@ set novisualbell
 set visualbell t_vb=
 set ruler
 "
-set cindent
 set t_RV=
 "
 set title
@@ -136,11 +136,8 @@ nmap <Leader>tc :tabclose<cr>
 "
 """ Commands
 "
-" Set syntax if terminal supports colors
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-    set t_Co=256
-    syntax on
-endif
+" Set 256 color support
+set t_Co=256
 "
 augroup vimrcEx
   autocmd!
