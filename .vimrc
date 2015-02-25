@@ -22,6 +22,8 @@ Plug 'othree/html5.vim'
 Plug 'mattn/gist-vim'
 Plug 'tpope/endwise'
 Plug 'jiangmiao/auto-pairs'
+Plug 'Valloric/MatchTagAlways'
+Plug 'majutsushi/tagbar'
 " on-demand loading
 Plug 'sjl/gundo.vim', {'on': 'GundoToggle'}
 Plug 'scrooloose/nerdtree', {'on':  'NERDTreeToggle'}
@@ -141,7 +143,7 @@ call plug#end()
         autocmd!
 
         autocmd FileType text setlocal spell
-        autocmd FileType haskell,puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
+        autocmd FileType haskell,puppet,ruby,yml,html setlocal expandtab shiftwidth=2 softtabstop=2
 
         " When editing a file, always jump to the last known cursor position.
         " Don't do it for commit messages, when the position is invalid, or when
@@ -206,7 +208,7 @@ call plug#end()
 
 " Functions {
 "
-    " Strip trailing whitespace (,ss)
+    " Strip trailing whitespace (<leader>ss)
     function! StripWhitespace()
         let save_cursor = getpos(".")
         let old_query = getreg('/')
@@ -222,6 +224,7 @@ call plug#end()
     set spellfile=~/.vim/spell/en.utf-8.add
 
     if has('gui_running')
+        " Remove toolbar, scrollbar and any noise from GUI
         set guioptions-=T
         set guioptions-=r
         set guioptions-=L
@@ -244,29 +247,32 @@ call plug#end()
 " Plugins specific settings {
 
     " nerdTree {
-    "
-    nnoremap <F9> :NERDTreeToggle<cr>
-    let NERDTreeIgnore=['\~$', '\.swp$', '\.git', '\.vim$', '\~$', '\.pyc$']
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+    if isdirectory(expand("~/.vim/plugged/nerdtree"))
+        nnoremap <F9> :NERDTreeToggle<cr>
+        let NERDTreeIgnore=['\~$', '\.swp$', '\.git', '\.vim$', '\~$', '\.pyc$']
+        autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+    endif
     " }
 
     " vim-airline {
-    "
-    let g:airline#extensions#tabline#enabled = 1
-    " let g:airline_powerline_fonts=1
+    if isdirectory(expand("~/.vim/plugged/vim-airline"))
+        let g:airline#extensions#tabline#enabled = 1
+        " let g:airline_powerline_fonts=1
+    endif
     " }
 
 
     " syntastic {
-    "
-    " To close the error window when using :bdelete command
-    nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
-    cabbrev <silent> bd lclose\|bdelete
+    if isdirectory(expand("~/.vim/plugged/syntastic"))
+        " To close the error window when using :bdelete command
+        nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
+        cabbrev <silent> bd lclose\|bdelete
 
-    let g:syntastic_python_python_exec = '/usr/bin/python3' " use python3
-    let g:syntastic_python_checkers = ['flake8']
-    let g:syntastic_javascript_checkers = ['jshint']
-    let g:syntastic_ruby_checkers = ['rubocop']
+        let g:syntastic_python_python_exec = '/usr/bin/python3' " use python3
+        let g:syntastic_python_checkers = ['flake8']
+        let g:syntastic_javascript_checkers = ['jshint']
+        let g:syntastic_ruby_checkers = ['rubocop']
+    endif
     " }
 
     " vim-notes {
@@ -275,77 +281,96 @@ call plug#end()
     " }
 
     " unite {
-
-    let g:unite_kind_file_vertical_preview = 1
-    " Use the fuzzy matcher for everything
-    call unite#filters#matcher_default#use(['matcher_fuzzy'])
-    " Start in insert mode
-    let g:unite_enable_start_insert = 1
-    " Enable history yank source
-    let g:unite_source_history_yank_enable = 1
-    " Map space to the prefix for Unite
-    nnoremap [unite] <Nop>
-    nmap <space> [unite]
-    " Quick file search
-    nnoremap <silent> [unite]f :<C-u>Unite -buffer-name=files file_rec/async file/new<CR>
-    " Quick grep from cwd
-    nnoremap <silent> [unite]g :<C-u>Unite -buffer-name=grep grep:.<CR>
-    " Quick yank history
-    nnoremap <silent> [unite]y :<C-u>Unite -buffer-name=yanks history/yank<CR>
-    " Set up some custom ignores
-    call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
-                \ 'ignore_pattern', join([
-                \ '\.git/',
-                \ 'git5/.*/review/',
-                \ 'tmp/',
-                \ 'node_modules/',
-                \ 'bower_components/',
-                \ 'dist/',
-                \ '.pyc',
-                \ ], '\|'))
-    " Quick line
-    nnoremap <silent> [unite]l :<C-u>Unite -buffer-name=search_file line<CR>
-    " Quick commands
-    nnoremap <silent> [unite]c :<C-u>Unite -buffer-name=commands command<CR>
-    " Quick search buffers
-    nnoremap <silent> [unite]b :<C-u>Unite -quick-match buffer<CR>
+    if isdirectory(expand("~/.vim/plugged/unite.vim"))
+        let g:unite_kind_file_vertical_preview = 1
+        " Use the fuzzy matcher for everything
+        call unite#filters#matcher_default#use(['matcher_fuzzy'])
+        " Start in insert mode
+        let g:unite_enable_start_insert = 1
+        " Enable history yank source
+        let g:unite_source_history_yank_enable = 1
+        " Map space to the prefix for Unite
+        nnoremap [unite] <Nop>
+        nmap <space> [unite]
+        " Quick file search
+        nnoremap <silent> [unite]f :<C-u>Unite -buffer-name=files file_rec/async file/new<CR>
+        " Quick grep from cwd
+        nnoremap <silent> [unite]g :<C-u>Unite -buffer-name=grep grep:.<CR>
+        " Quick yank history
+        nnoremap <silent> [unite]y :<C-u>Unite -buffer-name=yanks history/yank<CR>
+        " Set up some custom ignores
+        call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
+                    \ 'ignore_pattern', join([
+                    \ '\.git/',
+                    \ 'git5/.*/review/',
+                    \ 'tmp/',
+                    \ 'node_modules/',
+                    \ 'bower_components/',
+                    \ 'dist/',
+                    \ '.pyc',
+                    \ ], '\|'))
+        " Quick line
+        nnoremap <silent> [unite]l :<C-u>Unite -buffer-name=search_file line<CR>
+        " Quick commands
+        nnoremap <silent> [unite]c :<C-u>Unite -buffer-name=commands command<CR>
+        " Quick search buffers
+        nnoremap <silent> [unite]b :<C-u>Unite -quick-match buffer<CR>
+    endif
     " }
 
     " vim-hdevltools {
-    au FileType haskell nnoremap <buffer> <Leader>ht :HdevtoolsType<CR>
-    au FileType haskell nnoremap <buffer> <silent> <Leader>hc :HdevtoolsClear<CR>
-    au FileType haskell nnoremap <buffer> <silent> <Leader>hi :HdevtoolsInfo<CR>
+    if isdirectory(expand("~/.vim/plugged/vim-hdevtools"))
+        au FileType haskell nnoremap <buffer> <Leader>ht :HdevtoolsType<CR>
+        au FileType haskell nnoremap <buffer> <silent> <Leader>hc :HdevtoolsClear<CR>
+        au FileType haskell nnoremap <buffer> <silent> <Leader>hi :HdevtoolsInfo<CR>
+    endif
     " }
 
     " gundo {
-    nnoremap <F5> :GundoToggle<CR>
+    if isdirectory(expand("~/.vim/plugged/gundo.vim"))
+        nnoremap <F5> :GundoToggle<CR>
+    endif
     " }
 
-    " neocomplcache.vim {
-    let g:neocomplcache_enable_at_startup = 1
+    " vim-airline {
+    if isdirectory(expand("~/.vim/plugged/vim-airline"))
+        if !exists('g:airline_theme')
+        let g:airline_theme = 'solarized'
+        endif
+        if !exists('g:airline_powerline_fonts')
+        " Use the default set of separators with a few customizations
+        let g:airline_left_sep='›'  " Slightly fancier than '>'
+        let g:airline_right_sep='‹' " Slightly fancier than '<'
+        endif
+    endif
     " }
-
-  " vim-airline {
-  if isdirectory(expand("~/.vim/plugged/vim-airline/"))
-    if !exists('g:airline_theme')
-      let g:airline_theme = 'solarized'
-    endif
-    if !exists('g:airline_powerline_fonts')
-      " Use the default set of separators with a few customizations
-      let g:airline_left_sep='›'  " Slightly fancier than '>'
-      let g:airline_right_sep='‹' " Slightly fancier than '<'
-    endif
-  endif
-  " }
 
     " YouCompleteMe {
+    if isdirectory(expand("~/.vim/plugged/YouCompleteMe"))
+        " global configuration file for C like languages
+        let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+        let g:ycm_filetype_blacklist = {'notes' : 1, 'markdown' : 1, 'text' : 1, 'unite' : 1}
+        let g:ycm_autoclose_preview_window_after_completion=1
+        let g:ycm_confirm_extra_conf = 0
+        let g:ycm_goto_buffer_command='vertical-split'
+        " let g:ycm_cache_omnifunc = 1
+    endif
+    " }
+
+    " MatchTagAlways {
     "
-    " global configuration file for C like languages
-    let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-    let g:ycm_filetype_blacklist = {'notes' : 1, 'markdown' : 1,'text' : 1, 'unite' : 1}
-    let g:ycm_autoclose_preview_window_after_completion=1
-    let g:ycm_confirm_extra_conf = 0
-    let g:ycm_goto_buffer_command='vertical-split'
-    " let g:ycm_cache_omnifunc = 1
+    let g:mta_filetypes = {
+        \ 'html' : 1,
+        \ 'xhtml' : 1,
+        \ 'xml' : 1,
+        \ 'jinja' : 1,
+        \ 'erb' : 1,
+    \}
+    " }
+
+    " Tagbar {
+    if isdirectory(expand("~/.vim/plugged/tagbar"))
+        nmap <leader>tt :TagbarToggle<CR>
+    endif
     " }
 " }
