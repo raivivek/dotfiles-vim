@@ -5,7 +5,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
 Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdcommenter'
-"Plug 'jiangmiao/auto-pairs'
 Plug 'xolox/vim-misc'
 Plug 'docunext/closetag.vim'
 Plug 'Lokaltog/vim-easymotion'
@@ -21,7 +20,8 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
 Plug 'othree/html5.vim'
 Plug 'mattn/gist-vim'
-Plug 'ervandew/matchem'
+Plug 'tpope/endwise'
+Plug 'jiangmiao/auto-pairs'
 " on-demand loading
 Plug 'sjl/gundo.vim', {'on': 'GundoToggle'}
 Plug 'scrooloose/nerdtree', {'on':  'NERDTreeToggle'}
@@ -37,263 +37,315 @@ Plug 'fs111/pydoc.vim', {'for': 'python'}
 
 call plug#end()
 
-filetype on
-filetype plugin on
-filetype plugin indent on
+" General {
 
-set encoding=utf-8
-"
-" Display extra whitespace
-"set fillchars+=stl:\ ,stlnc: 
-set list listchars=tab:▸\ ,trail:·
-set mps+=<:>
-"
-set autowrite
-"
-colorscheme solarized
-"
-set backspace=2
-set expandtab
-set shiftwidth=2
-set softtabstop=2
-set shiftround
-set wrap
-"
-set showmatch
-set smartcase
-set smarttab
-set showcmd
-set incsearch
-"
-set confirm
-set cmdheight=2
-set number
-set laststatus=2
-"
-set timeout timeoutlen=500 ttimeoutlen=1
-set autoread
-"
-set novisualbell
-set visualbell t_vb=
-set ruler
-"
-set t_RV=
-"
-set title
-set cursorcolumn
-set cursorline
-"
-set lazyredraw
-" set confirm
-set viminfo='20,\"500
-set hidden
-set history=50
-set clipboard=unnamedplus
-"
-set foldmethod=indent
-set foldlevel=99
-"
-" Minimal number of screen lines to keep above and below the cursor
-set scrolloff=10
-"
-" Instead of these two options, we can set a single directory for all backups
-" and temporary buffers. This is a better solution in case we don't want our
-" current buffer to be destroyed due to any IOError.
-"
-" set backupdir=~/.vimtmp
-" set directory=~/.vimtmp
-set nobackup
-set nowritebackup " Writes the buffer to the same file
-set noswapfile
-"
-" Don’t show the intro message when starting Vim
-set shortmess=atI
-"
-" Optimize for fast terminal connections
-set ttyfast
+    filetype plugin indent on
 
-""" Custom mappings
-"
-let mapleader=','
-set pastetoggle=<F2>
-"
-" Windows like movements for long lines with wrap enabled:
-noremap j gj
-noremap k gk
-"
-" Allow saving of files as sudo when I forget to start vim using sudo.
-cmap w!! :w !sudo tee > /dev/null %
-"
-" Do not leave visual mode after visually shifting text
-vnoremap < <gv
-vnoremap > >gv
+    set mouse=a
+    set mousehide
+    set shortmess+=filmnrxoOtT
+    set ttyfast
 
-" Tab control
-nmap <Leader>tt :tabnew<cr>
-nmap <Leader>tn :tabnext<cr>
-nmap <Leader>tp :tabprevious<cr>
-nmap <Leader>tc :tabclose<cr>
-"
-""" Commands
-"
-" Set 256 color support
-set t_Co=256
-"
-augroup vimrcEx
-  autocmd!
+    " set timeout timeoutlen=500 ttimeoutlen=1
+    au FocusLost * silent! wa
 
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=79
+    scriptencoding utf-8
 
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it for commit messages, when the position is invalid, or when
-  " inside an event handler (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
+    if !exists('g:no_autochdir')
+        autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
+        " Always switch to the current file directory
+    endif
 
-  " Set syntax highlighting for specific file types
-  autocmd BufRead,BufNewFile *.md set filetype=markdown
+    if filereadable(expand("~/.vim/plugged/vim-colors-solarized/colors/solarized.vim"))
+        let g:solarized_termcolors=256
+        let g:solarized_contrast="normal"
+        let g:solarized_visibility="normal"
+        color solarized
+        set bg=light
+    endif
 
-  " Automatically wrap at 80 characters for Markdown
-  autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+    if has('cmdline_info')
+        set ruler                   " Show the ruler
+        set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
+        set showcmd                 " Show partial commands in status line and
+        " Selected characters/lines in visual mode
+    endif
 
-  " Set spell for markdown files
-  autocmd BufRead,BufNewFile *.md setlocal spell
-augroup END
-"
-" Strip trailing whitespace (,ss)
-function! StripWhitespace()
-    let save_cursor = getpos(".")
-    let old_query = getreg('/')
-    :%s/\s\+$//e
-    call setpos('.', save_cursor)
-    call setreg('/', old_query)
-endfunction
-noremap <leader>ss :call StripWhitespace()<CR>
-"
-if exists("+spelllang")
-  set spelllang=en_us
-endif
-set spellfile=~/.vim/spell/en.utf-8.add
-"
-if has('gui_running')
-  set guifont=Droid\ Sans\ Mono\ 9
-endif
-"
-"
-au VimResized * :wincmd =
-"
-au FocusLost * silent! wa
-"
-set wildchar=<Tab> wildmenu wildmode=full
-set complete=.,w,t
-"
-"set wildmenu
-"set wildmode=list:longest
-set wildignore+=.hg,.git,.svn " Version Controls"
-set wildignore+=*.aux,*.out,*.toc "Latex Indermediate files"
-set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg "Binary Imgs"
-set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest "Compiled Object files"
-set wildignore+=*.spl "Compiled speolling world list"
-set wildignore+=*.sw? "Vim swap files"
-set wildignore+=*.DS_Store "OSX SHIT"
-set wildignore+=*.luac "Lua byte code"
-set wildignore+=migrations "Django migrations"
-set wildignore+=*.pyc "Python Object codes"
-set wildignore+=*.orig "Merge resolution files"
+    if has('statusline')
+        set laststatus=2
 
-""" Plugin specific settings
+        " Broken down into easily includeable segments
+        set statusline=%<%f\                     " Filename
+        set statusline+=%w%h%m%r                 " Options
+        if !exists('g:override_spf13_bundles')
+            set statusline+=%{fugitive#statusline()} " Git Hotness
+        endif
+        set statusline+=\ [%{&ff}/%Y]            " Filetype
+        set statusline+=\ [%{getcwd()}]          " Current dir
+        set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+    endif
+
+    highlight clear SignColumn      " SignColumn should match background
+    highlight clear LineNr          " Current line number row will have same background color in relative mode
+
+    " Instead of these two options, we can set a single directory for all
+    " backups and temporary buffers. This is a better solution in case we don't
+    " want our current buffer to be destroyed due to any IOError.
+    "
+    " set backupdir=~/.vimtmp
+    " set directory=~/.vimtmp
+    set nobackup
+    set nowritebackup " Writes the buffer to the same file
+    set noswapfile
+
+    set list listchars=tab:▸\ ,trail:·
+    set tags=./tags;/
+    set mps+=<:>
+    set backspace=2
+    set smartcase
+    set confirm
+    set autoread
+    set showmatch
+    set smarttab
+    set showcmd
+    set incsearch
+    set nu
+    set novisualbell
+    set visualbell t_vb=
+    " set t_RV=
+    set title
+    set cursorcolumn
+    set cursorline
+    set viminfo='20,\"500
+    set hidden
+    set history=100
+    set clipboard=unnamedplus
+    set scrolloff=10
+    set foldenable
+" }
+
+" Formatting {
 "
-"" YouCompleteMe
-" global configuration file for C like languages
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-let g:ycm_filetype_blacklist = {
-      \ 'notes' : 1,
-      \ 'markdown' : 1,
-      \ 'text' : 1,
-      \ 'unite' : 1
-      \}
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_goto_buffer_command='vertical-split'
+    set autowrite
+    set expandtab
+    set shiftwidth=4
+    set tabstop=4
+    set softtabstop=4
+    set nojoinspaces
+    set shiftround
+    set splitright
+    set splitbelow
+    set wrap
+
+    augroup vimrcEx
+        autocmd!
+
+        autocmd FileType text setlocal spell
+        autocmd FileType haskell,puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
+
+        " When editing a file, always jump to the last known cursor position.
+        " Don't do it for commit messages, when the position is invalid, or when
+        " inside an event handler (happens when dropping a file on gvim).
+        autocmd BufReadPost *
+                    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+                    \   exe "normal g`\"" |
+                    \ endif
+
+        " Set syntax highlighting for specific file types
+        autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+        " Set spell for markdown files
+        autocmd BufRead,BufNewFile *.md setlocal spell
+    augroup END
+
+    let g:omni_complete=0
+
+    set wildchar=<Tab> wildmenu wildmode=full
+    set complete=.,w,t
+    "
+    "set wildmenu
+    "set wildmode=list:longest
+    set wildignore+=.hg,.git,.svn " Version Controls"
+    set wildignore+=*.aux,*.out,*.toc "Latex Indermediate files"
+    set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg "Binary Imgs"
+    set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest "Compiled Object files"
+    set wildignore+=*.spl "Compiled speolling world list"
+    set wildignore+=*.sw? "Vim swap files"
+    set wildignore+=*.DS_Store "OSX SHIT"
+    set wildignore+=*.luac "Lua byte code"
+    set wildignore+=migrations "Django migrations"
+    set wildignore+=*.pyc "Python Object codes"
+    set wildignore+=*.orig "Merge resolution files"
+" }
+
+
+" Key (re)mapping {
+    "
+    let mapleader=','
+    set pastetoggle=<F2>
+
+    " Windows like movements for long lines with wrap enabled:
+    noremap j gj
+    noremap k gk
+
+    " Allow saving of files as sudo when I forget to start vim using sudo.
+    cmap w!! :w !sudo tee > /dev/null %
+
+    " Do not leave visual mode after visually shifting text
+    vnoremap < <gv
+    vnoremap > >gv
+
+    " Tab control
+    nmap <Leader>tt :tabnew<cr>
+    nmap <Leader>tn :tabnext<cr>
+    nmap <Leader>tp :tabprevious<cr>
+    nmap <Leader>tc :tabclose<cr>
+
+    noremap <leader>ss :call StripWhitespace()<CR>
+" }
+
+" Functions {
 "
-"" nerdTree
-nnoremap <F9> :NERDTreeToggle<cr>
-let NERDTreeIgnore=['\~$', '\.swp$', '\.git', '\.vim$', '\~$', '\.pyc$']
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-"
-"
-"" vim-airline
-let g:airline#extensions#tabline#enabled = 1
-"let g:airline_powerline_fonts=1
-"
-set tags=./tags;/
-"
-"" To close the error window when using :bdelete command
-" ( For syntastic plugin )
-nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
-cabbrev <silent> bd lclose\|bdelete
-" force syntastic to use Python 3
-let g:syntastic_python_python_exec = '/usr/bin/python3'
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_ruby_checkers = ['rubocop']
-"
-"" Theme
-let g:molokai_original = 1
-let g:rehash256 = 1
-"
-"" Settings for Vim-notes
-let g:notes_title_sync = 'rename_file'
-"
-"" Settings for UltiSnips
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetsDir="~/.vim/bundle/vim-snippets/UltiSnips"
-"
-"" Unite (inspired from terryma's dotfiles)
-let g:unite_kind_file_vertical_preview = 1
-" Use the fuzzy matcher for everything
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-"call unite#filters#sorter_default#use(['sorter_rank'])
-" Start in insert mode
-let g:unite_enable_start_insert = 1
-" Enable history yank source
-let g:unite_source_history_yank_enable = 1
-" Map space to the prefix for Unite
-nnoremap [unite] <Nop>
-nmap <space> [unite]
-" Quick file search
-nnoremap <silent> [unite]f :<C-u>Unite -buffer-name=files file_rec/async file/new<CR>
-" Quick grep from cwd
-nnoremap <silent> [unite]g :<C-u>Unite -buffer-name=grep grep:.<CR>
-" Quick yank history
-nnoremap <silent> [unite]y :<C-u>Unite -buffer-name=yanks history/yank<CR>
-" Set up some custom ignores
-call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
-      \ 'ignore_pattern', join([
-      \ '\.git/',
-      \ 'git5/.*/review/',
-      \ 'tmp/',
-      \ 'node_modules/',
-      \ 'bower_components/',
-      \ 'dist/',
-      \ '.pyc',
-      \ ], '\|'))
-" Quick line
-nnoremap <silent> [unite]l :<C-u>Unite -buffer-name=search_file line<CR>
-" Quick commands
-nnoremap <silent> [unite]c :<C-u>Unite -buffer-name=commands command<CR>
-" Quick search buffers
-nnoremap <silent> [unite]b :<C-u>Unite -quick-match buffer<CR>
-"
-"" vim-hdevltools
-au FileType haskell nnoremap <buffer> <Leader>ht :HdevtoolsType<CR>
-au FileType haskell nnoremap <buffer> <silent> <Leader>hc :HdevtoolsClear<CR>
-au FileType haskell nnoremap <buffer> <silent> <Leader>hi :HdevtoolsInfo<CR>
-"
-"" gundo
-nnoremap <F5> :GundoToggle<CR>
+    " Strip trailing whitespace (,ss)
+    function! StripWhitespace()
+        let save_cursor = getpos(".")
+        let old_query = getreg('/')
+        :%s/\s\+$//e
+        call setpos('.', save_cursor)
+        call setreg('/', old_query)
+    endfunction
+
+    if exists("+spelllang")
+        set spelllang=en_us
+    endif
+
+    set spellfile=~/.vim/spell/en.utf-8.add
+
+    if has('gui_running')
+        set guioptions-=T
+        set guioptions-=r
+        set guioptions-=L
+        set guioptions-=m
+        set guioptions+=a
+        set guifont=Droid\ Sans\ Mono\ 9
+        set lines=40
+    endif
+
+    if exists('g:omni_complete')
+        autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+        autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+        autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+        autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+        autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+        autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+    endif
+" }
+
+" Plugins specific settings {
+
+    " nerdTree {
+    "
+    nnoremap <F9> :NERDTreeToggle<cr>
+    let NERDTreeIgnore=['\~$', '\.swp$', '\.git', '\.vim$', '\~$', '\.pyc$']
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+    " }
+
+    " vim-airline {
+    "
+    let g:airline#extensions#tabline#enabled = 1
+    " let g:airline_powerline_fonts=1
+    " }
+
+
+    " syntastic {
+    "
+    " To close the error window when using :bdelete command
+    nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
+    cabbrev <silent> bd lclose\|bdelete
+
+    let g:syntastic_python_python_exec = '/usr/bin/python3' " use python3
+    let g:syntastic_python_checkers = ['flake8']
+    let g:syntastic_javascript_checkers = ['jshint']
+    let g:syntastic_ruby_checkers = ['rubocop']
+    " }
+
+    " vim-notes {
+    "
+    let g:notes_title_sync = 'rename_file'
+    " }
+
+    " unite {
+
+    let g:unite_kind_file_vertical_preview = 1
+    " Use the fuzzy matcher for everything
+    call unite#filters#matcher_default#use(['matcher_fuzzy'])
+    " Start in insert mode
+    let g:unite_enable_start_insert = 1
+    " Enable history yank source
+    let g:unite_source_history_yank_enable = 1
+    " Map space to the prefix for Unite
+    nnoremap [unite] <Nop>
+    nmap <space> [unite]
+    " Quick file search
+    nnoremap <silent> [unite]f :<C-u>Unite -buffer-name=files file_rec/async file/new<CR>
+    " Quick grep from cwd
+    nnoremap <silent> [unite]g :<C-u>Unite -buffer-name=grep grep:.<CR>
+    " Quick yank history
+    nnoremap <silent> [unite]y :<C-u>Unite -buffer-name=yanks history/yank<CR>
+    " Set up some custom ignores
+    call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
+                \ 'ignore_pattern', join([
+                \ '\.git/',
+                \ 'git5/.*/review/',
+                \ 'tmp/',
+                \ 'node_modules/',
+                \ 'bower_components/',
+                \ 'dist/',
+                \ '.pyc',
+                \ ], '\|'))
+    " Quick line
+    nnoremap <silent> [unite]l :<C-u>Unite -buffer-name=search_file line<CR>
+    " Quick commands
+    nnoremap <silent> [unite]c :<C-u>Unite -buffer-name=commands command<CR>
+    " Quick search buffers
+    nnoremap <silent> [unite]b :<C-u>Unite -quick-match buffer<CR>
+    " }
+
+    " vim-hdevltools {
+    au FileType haskell nnoremap <buffer> <Leader>ht :HdevtoolsType<CR>
+    au FileType haskell nnoremap <buffer> <silent> <Leader>hc :HdevtoolsClear<CR>
+    au FileType haskell nnoremap <buffer> <silent> <Leader>hi :HdevtoolsInfo<CR>
+    " }
+
+    " gundo {
+    nnoremap <F5> :GundoToggle<CR>
+    " }
+
+    " neocomplcache.vim {
+    let g:neocomplcache_enable_at_startup = 1
+    " }
+
+  " vim-airline {
+  if isdirectory(expand("~/.vim/plugged/vim-airline/"))
+    if !exists('g:airline_theme')
+      let g:airline_theme = 'solarized'
+    endif
+    if !exists('g:airline_powerline_fonts')
+      " Use the default set of separators with a few customizations
+      let g:airline_left_sep='›'  " Slightly fancier than '>'
+      let g:airline_right_sep='‹' " Slightly fancier than '<'
+    endif
+  endif
+  " }
+
+    " YouCompleteMe {
+    "
+    " global configuration file for C like languages
+    let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+    let g:ycm_filetype_blacklist = {'notes' : 1, 'markdown' : 1,'text' : 1, 'unite' : 1}
+    let g:ycm_autoclose_preview_window_after_completion=1
+    let g:ycm_confirm_extra_conf = 0
+    let g:ycm_goto_buffer_command='vertical-split'
+    " let g:ycm_cache_omnifunc = 1
+    " }
+" }
