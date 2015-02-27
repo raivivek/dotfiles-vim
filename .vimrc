@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 "
 " always enabled
-Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
 Plug 'bling/vim-airline'
@@ -12,7 +12,7 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'altercation/vim-colors-solarized'
 Plug 'tomtom/quickfixsigns_vim'
 Plug 'nathanaelkane/vim-indent-guides'
-" Plug 'Valloric/YouCompleteMe', {'do': './install.sh'}
+Plug 'Valloric/YouCompleteMe', {'do': './install.sh', 'frozen': 'true'}
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-repeat'
 Plug 'godlygeek/tabular'
@@ -26,6 +26,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'Valloric/MatchTagAlways'
 Plug 'majutsushi/tagbar'
 " on-demand loading
+Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
 Plug 'sjl/gundo.vim', {'on': 'GundoToggle'}
 Plug 'scrooloose/nerdtree', {'on':  'NERDTreeToggle'}
 Plug 'xolox/vim-notes', {'on': 'Notes'}
@@ -70,7 +71,6 @@ call plug#end()
     if has('cmdline_info')
         set ruler                   " Show the ruler
         set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
-        set showcmd                 " Show partial commands in status line and
         " Selected characters/lines in visual mode
     endif
 
@@ -106,7 +106,6 @@ call plug#end()
     set mps+=<:>
     set backspace=2
     set smartcase
-    set confirm
     set autoread
     set showmatch
     set smarttab
@@ -384,13 +383,12 @@ call plug#end()
     " }
     "
     " Goyo {
+    let g:goyo_width = 100
     function! s:goyo_enter()
         if has('gui_running')
-            set fullscreen
-            set background=light
             set linespace=1
-            set nu
-            ClearGutters()
+            Limelight
+            call ClearGutters()
         elseif exists('$TMUX')
             silent !tmux set status off
         endif
@@ -398,9 +396,8 @@ call plug#end()
 
     function! s:goyo_leave()
         if has('gui_running')
-            set nofullscreen
-            set background=dark
-            ClearGutters()
+            call ClearGutters()
+            Limelight!
         elseif exists('$TMUX')
             silent !tmux set status on
         endif
