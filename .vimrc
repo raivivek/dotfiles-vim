@@ -11,7 +11,7 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'altercation/vim-colors-solarized'
 Plug 'tomtom/quickfixsigns_vim'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe', {'do': './install.sh'}
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-repeat'
 Plug 'godlygeek/tabular'
@@ -20,7 +20,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
 Plug 'othree/html5.vim'
 Plug 'mattn/gist-vim'
-Plug 'tpope/endwise'
+Plug 'tpope/vim-endwise'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Valloric/MatchTagAlways'
 Plug 'majutsushi/tagbar'
@@ -31,9 +31,9 @@ Plug 'xolox/vim-notes', {'on': 'Notes'}
 Plug 'chrisbra/NrrwRgn', {'on': 'NrrwRgn'}
 Plug 'mtth/scratch.vim', {'on': 'Scratch'}
 " filetype specific plugins
-Plug 'othree/javascript-libraries-syntax.vim', {'for': ['javascript', 'js']}
-Plug 'pangloss/vim-javascript', {'for': ['javascript', 'js']}
-Plug 'itspriddle/vim-jquery', {'for': ['javascript', 'js']}
+Plug 'othree/javascript-libraries-syntax.vim', {'for': ['javascript']}
+Plug 'pangloss/vim-javascript', {'for': ['javascript']}
+Plug 'itspriddle/vim-jquery', {'for': ['javascript']}
 Plug 'bitc/vim-hdevtools', {'for': 'haskell'}
 Plug 'fs111/pydoc.vim', {'for': 'python'}
 
@@ -63,7 +63,7 @@ call plug#end()
         let g:solarized_contrast="normal"
         let g:solarized_visibility="normal"
         color solarized
-        set bg=light
+        set bg=dark
     endif
 
     if has('cmdline_info')
@@ -160,7 +160,7 @@ call plug#end()
         autocmd BufRead,BufNewFile *.md setlocal spell
     augroup END
 
-    let g:omni_complete=0
+    let g:omni_complete=1
 
     set wildchar=<Tab> wildmenu wildmode=full
     set complete=.,w,t

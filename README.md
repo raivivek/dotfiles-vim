@@ -11,27 +11,27 @@ Installation
 
 * Clone the repository
 
-  ```$ git clone https://github.com/vivekiitkgp/Dotfiles-vim.git```
+  ```$ git clone https://github.com/vivekiitkgp/Dotfiles-vim.git ~/.vim```
 
-* Symlink the `.(g)vimrc` files from this directory to your home directory.
+* Symlink the `.(g)vimrc` files from `~/.vim` directory to your home directory.
 
 * Open any (g)vim instance and run `:PlugInstall`. You may optionally have to
-  clean the plugged directory using `:PlugClean` command (Don't worry if it
-  shows a lot of errors. It's because the plugins haven't been setup yet).
-  It will automatically clone and install all the relevant plugins into the
-  `plugged/` directory.
+  clean the plugged directory using `:PlugClean` command in case any errors are
+  shown. It will automatically clone and install all the relevant plugins into
+  the `plugged/` directory.
 
-* Close and start again. You're done!
+*  You're done! Close and start again.
 
 
 Notes
 =====
 
-Few of the plugins require post installation compilation or bit manual
-managenement. For example, `Valloric/YouCompleteMe` requires a compiled
-component which one needs to compile on their machine. This can also be
-automated by providing suitable options with `vim-plug`. Please look at
-[their](https://github.com/junegunn/vim-plug#post-update-hooks) documentation to
-learn how.
+`YouCompleteMe` is a relatively larger plugin that requires local compilation
+and a bit time to install. Hence, it is disabled by default. If you want to
+install YCM, then uncomment the line saying `Plug 'Valloric/YouCompleteMe'`
+within the `.vimrc`, and run `:PlugInstall` again.
 
-The rest of the settings should work out of the box.
+However, note that this might not work out of the box on 32 bit machines. In
+that case, please have a look at
+[their](https://github.com/junegunn/vim-plug#post-update-hooks) documentation
+for manual installation process.
