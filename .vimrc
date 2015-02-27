@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 "
 " always enabled
+Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
 Plug 'bling/vim-airline'
@@ -79,7 +80,7 @@ call plug#end()
         " Broken down into easily includeable segments
         set statusline=%<%f\                     " Filename
         set statusline+=%w%h%m%r                 " Options
-        if !exists('g:override_spf13_bundles')
+        if isdirectory(expand("~/.vim/plugged/vim-fugitive"))
             set statusline+=%{fugitive#statusline()} " Git Hotness
         endif
         set statusline+=\ [%{&ff}/%Y]            " Filetype
@@ -112,11 +113,9 @@ call plug#end()
     set showcmd
     set incsearch
     set nu
-    set novisualbell
     set visualbell t_vb=
     " set t_RV=
     set title
-    set cursorcolumn
     set cursorline
     set viminfo='20,\"500
     set hidden
@@ -215,6 +214,11 @@ call plug#end()
         :%s/\s\+$//e
         call setpos('.', save_cursor)
         call setreg('/', old_query)
+    endfunction
+
+    function! ClearGutters()
+        highlight clear SignColumn
+        highlight clear LineNr
     endfunction
 
     if exists("+spelllang")
@@ -372,5 +376,37 @@ call plug#end()
     if isdirectory(expand("~/.vim/plugged/tagbar"))
         nmap <leader>tt :TagbarToggle<CR>
     endif
+    " }
+
+    " vim-indent-guides {
+    let g:indent_guides_start_level = 2
+    let g:indent_guides_guide_size = 1
+    " }
+    "
+    " Goyo {
+    function! s:goyo_enter()
+        if has('gui_running')
+            set fullscreen
+            set background=light
+            set linespace=1
+            set nu
+            ClearGutters()
+        elseif exists('$TMUX')
+            silent !tmux set status off
+        endif
+    endfunction
+
+    function! s:goyo_leave()
+        if has('gui_running')
+            set nofullscreen
+            set background=dark
+            ClearGutters()
+        elseif exists('$TMUX')
+            silent !tmux set status on
+        endif
+    endfunction
+
+    autocmd User GoyoEnter nested call <SID>goyo_enter()
+    autocmd User GoyoLeave nested call <SID>goyo_leave()
     " }
 " }
