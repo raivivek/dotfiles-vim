@@ -6,12 +6,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
 Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdcommenter'
-Plug 'xolox/vim-misc'
+" Plug 'xolox/vim-misc'
 Plug 'docunext/closetag.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'altercation/vim-colors-solarized'
 Plug 'tomtom/quickfixsigns_vim'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Valloric/YouCompleteMe', {'do': './install.sh', 'frozen': 'true'}
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-repeat'
@@ -26,6 +25,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'Valloric/MatchTagAlways'
 Plug 'majutsushi/tagbar'
 " on-demand loading
+Plug 'Yggdroot/indentLine', {'on': 'IndentLinesToggle'}
 Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
 Plug 'sjl/gundo.vim', {'on': 'GundoToggle'}
 Plug 'scrooloose/nerdtree', {'on':  'NERDTreeToggle'}
@@ -65,7 +65,7 @@ call plug#end()
         let g:solarized_contrast="normal"
         let g:solarized_visibility="normal"
         color solarized
-        set bg=dark
+        set bg=light
     endif
 
     if has('cmdline_info')
@@ -233,7 +233,7 @@ call plug#end()
         set guioptions-=L
         set guioptions-=m
         set guioptions+=a
-        set guifont=Droid\ Sans\ Mono\ 9
+        set guifont=Inconsolata\ 11
         set lines=40
     endif
 
@@ -353,6 +353,7 @@ call plug#end()
         " global configuration file for C like languages
         let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
         let g:ycm_filetype_blacklist = {'notes' : 1, 'markdown' : 1, 'text' : 1, 'unite' : 1}
+        let g:ycm_error_symbol = '>'
         let g:ycm_autoclose_preview_window_after_completion=1
         let g:ycm_confirm_extra_conf = 0
         let g:ycm_goto_buffer_command='vertical-split'
@@ -377,9 +378,11 @@ call plug#end()
     endif
     " }
 
-    " vim-indent-guides {
+    " indentline{
+    let g:indentLine_maxLines = 500
     let g:indent_guides_start_level = 2
     let g:indent_guides_guide_size = 1
+        nmap <leader>il :IndentLinesToggle<CR>
     " }
     "
     " Goyo {
