@@ -15,10 +15,15 @@ Installation
 
 * Symlink the `.(g)vimrc` files from `~/.vim` directory to your home directory.
 
+```
+ln -s ~/.vim/.vimrc ~/.vimrc
+ln -s ~/.vim/.gvimrc ~/.gvimrc
+```
+
 * Open any (g)vim instance and run `:PlugInstall`. You may optionally have to
   clean the plugged directory using `:PlugClean` command in case any errors are
   shown. It will automatically clone and install all the relevant plugins into
-  the `plugged/` directory.
+  the `~/.vim/plugged/` directory.
 
 *  You're done! Close and start again.
 
