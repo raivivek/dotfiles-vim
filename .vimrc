@@ -6,6 +6,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
 Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdcommenter'
+Plug 'Shougo/vimproc.vim', {'do': 'make'}
 " Plug 'xolox/vim-misc'
 Plug 'docunext/closetag.vim'
 Plug 'Lokaltog/vim-easymotion'
