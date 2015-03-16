@@ -7,12 +7,11 @@ Plug 'scrooloose/syntastic'
 Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
-" Plug 'xolox/vim-misc'
 Plug 'docunext/closetag.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'altercation/vim-colors-solarized'
 Plug 'tomtom/quickfixsigns_vim'
-Plug 'Valloric/YouCompleteMe', {'do': './install.sh', 'frozen': 'true'}
+" Plug 'Valloric/YouCompleteMe', {'do': './install.sh', 'frozen': 'true'}
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-repeat'
 Plug 'godlygeek/tabular'
