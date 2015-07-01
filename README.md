@@ -21,12 +21,12 @@ ln -s ~/.vim/.vimrc ~/.vimrc
 ln -s ~/.vim/.gvimrc ~/.gvimrc
 ```
 
-* Open any (g)vim instance and run `:PlugInstall`. You may optionally have to
+* Open any `(g)vim` instance and run `:PlugInstall`. You may optionally have to
   clean the plugged directory using `:PlugClean` command in case any errors are
   shown. It will automatically clone and install all the relevant plugins into
   the `~/.vim/plugged/` directory.
 
-**NOTE: It is an one time step. You don't need to run `:PlugInstall`` everytime
+**NOTE: It is an one time step. You don't need to run `:PlugInstall` everytime
 you open a vim instance.**
 
 *  You're done! Close and start again.

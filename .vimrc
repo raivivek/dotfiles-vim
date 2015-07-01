@@ -11,19 +11,18 @@ Plug 'docunext/closetag.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'altercation/vim-colors-solarized'
 Plug 'tomtom/quickfixsigns_vim'
-" Plug 'Valloric/YouCompleteMe', {'do': './install.sh', 'frozen': 'true'}
-Plug 'AndrewRadev/splitjoin.vim'
+Plug 'Valloric/YouCompleteMe', {'do': './install.sh', 'frozen': 'true'}
+"Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-repeat'
 Plug 'godlygeek/tabular'
 Plug 'Shougo/unite.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
-Plug 'othree/html5.vim'
-Plug 'mattn/gist-vim'
 Plug 'tpope/vim-endwise'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Valloric/MatchTagAlways'
 Plug 'majutsushi/tagbar'
+Plug 'terryma/vim-expand-region'
 " on-demand loading
 Plug 'Yggdroot/indentLine', {'on': 'IndentLinesToggle'}
 Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
@@ -32,7 +31,9 @@ Plug 'scrooloose/nerdtree', {'on':  'NERDTreeToggle'}
 Plug 'xolox/vim-notes', {'on': 'Notes'}
 Plug 'chrisbra/NrrwRgn', {'on': 'NrrwRgn'}
 Plug 'mtth/scratch.vim', {'on': 'Scratch'}
+Plug 'mattn/gist-vim', {'on': 'Gist'}
 " filetype specific plugins
+Plug 'othree/html5.vim', {'for': ['html']}
 Plug 'othree/javascript-libraries-syntax.vim', {'for': ['javascript']}
 Plug 'pangloss/vim-javascript', {'for': ['javascript']}
 Plug 'itspriddle/vim-jquery', {'for': ['javascript']}
@@ -60,13 +61,17 @@ call plug#end()
         " Always switch to the current file directory
     endif
 
-    if filereadable(expand("~/.vim/plugged/vim-colors-solarized/colors/solarized.vim"))
-        let g:solarized_termcolors=256
-        let g:solarized_contrast="normal"
-        let g:solarized_visibility="normal"
-        color solarized
-        set bg=light
-    endif
+    color smyck
+    "if filereadable(expand("~/.vim/plugged/vim-colors-solarized/colors/solarized.vim"))
+        "let g:solarized_termcolors=256
+        "let g:solarized_contrast="normal"
+        "let g:solarized_visibility="normal"
+        "color solarized
+        "set bg=light
+    "else
+        "color espresso-soda
+        "set bg=light
+    "endif
 
     if has('cmdline_info')
         set ruler                   " Show the ruler
@@ -196,11 +201,13 @@ call plug#end()
     vnoremap > >gv
 
     " Tab control
-    nmap <Leader>tt :tabnew<cr>
-    nmap <Leader>tn :tabnext<cr>
-    nmap <Leader>tp :tabprevious<cr>
-    nmap <Leader>tc :tabclose<cr>
+    nmap <Leader>t :tabnew<cr>
+    nmap <Leader>n :tabnext<cr>
+    nmap <Leader>p :tabprevious<cr>
+    nmap <Leader>c :tabclose<cr>
+    nmap <Leader>to :tabe 
 
+    "
     noremap <leader>ss :call StripWhitespace()<CR>
 " }
 
@@ -233,7 +240,7 @@ call plug#end()
         set guioptions-=L
         set guioptions-=m
         set guioptions+=a
-        set guifont=Inconsolata\ 11
+        set guifont=Source\ Code\ Pro\ Medium\ 10
         set lines=40
     endif
 
@@ -338,12 +345,12 @@ call plug#end()
     " vim-airline {
     if isdirectory(expand("~/.vim/plugged/vim-airline"))
         if !exists('g:airline_theme')
-        let g:airline_theme = 'solarized'
+        "let g:airline_theme = 'solarized'
         endif
         if !exists('g:airline_powerline_fonts')
         " Use the default set of separators with a few customizations
-        let g:airline_left_sep='›'  " Slightly fancier than '>'
-        let g:airline_right_sep='‹' " Slightly fancier than '<'
+        let g:airline_left_sep=' '  " Slightly fancier than '>'
+        let g:airline_right_sep=' ' " Slightly fancier than '<'
         endif
     endif
     " }
@@ -376,6 +383,11 @@ call plug#end()
     if isdirectory(expand("~/.vim/plugged/tagbar"))
         nmap <leader>tt :TagbarToggle<CR>
     endif
+    " }
+
+    " vim-expand-region {
+    vmap v <Plug>(expand_region_expand)
+    vmap <C-v> <Plug>(expand_region_shrink)
     " }
 
     " indentline{
