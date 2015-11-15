@@ -1,28 +1,28 @@
 call plug#begin('~/.vim/plugged')
 "
 " always enabled
-Plug 'junegunn/limelight.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
 Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'docunext/closetag.vim'
-Plug 'Lokaltog/vim-easymotion'
-Plug 'altercation/vim-colors-solarized'
+"Plug 'Lokaltog/vim-easymotion'
+"Plug 'altercation/vim-colors-solarized'
 Plug 'tomtom/quickfixsigns_vim'
 Plug 'Valloric/YouCompleteMe', {'do': './install.sh', 'frozen': 'true'}
 "Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-repeat'
 Plug 'godlygeek/tabular'
-Plug 'Shougo/unite.vim'
-Plug 'terryma/vim-multiple-cursors'
+"Plug 'Shougo/unite.vim'
+"Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Valloric/MatchTagAlways'
 Plug 'majutsushi/tagbar'
-Plug 'terryma/vim-expand-region'
+"Plug 'terryma/vim-expand-region'
+Plug 'junegunn/limelight.vim'
 " on-demand loading
 Plug 'Yggdroot/indentLine', {'on': 'IndentLinesToggle'}
 Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
@@ -33,6 +33,7 @@ Plug 'chrisbra/NrrwRgn', {'on': 'NrrwRgn'}
 Plug 'mtth/scratch.vim', {'on': 'Scratch'}
 Plug 'mattn/gist-vim', {'on': 'Gist'}
 " filetype specific plugins
+Plug 'ivanov/vim-ipython'
 Plug 'othree/html5.vim', {'for': ['html']}
 Plug 'othree/javascript-libraries-syntax.vim', {'for': ['javascript']}
 Plug 'pangloss/vim-javascript', {'for': ['javascript']}
@@ -61,7 +62,8 @@ call plug#end()
         " Always switch to the current file directory
     endif
 
-    color smyck
+    "color smyck
+    color Tomorrow-Night-Eighties
     "if filereadable(expand("~/.vim/plugged/vim-colors-solarized/colors/solarized.vim"))
         "let g:solarized_termcolors=256
         "let g:solarized_contrast="normal"
@@ -207,6 +209,8 @@ call plug#end()
     nmap <Leader>c :tabclose<cr>
     nmap <Leader>to :tabe 
 
+    nmap <Leader>pb :pu<CR>
+    nmap <Leader>pu :pu!<CR>
     "
     noremap <leader>ss :call StripWhitespace()<CR>
 " }
@@ -278,7 +282,7 @@ call plug#end()
         nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
         cabbrev <silent> bd lclose\|bdelete
 
-        let g:syntastic_python_python_exec = '/usr/bin/python3' " use python3
+        let g:syntastic_python_python_exec = '/usr/bin/env python' " use python3
         let g:syntastic_python_checkers = ['flake8']
         let g:syntastic_javascript_checkers = ['jshint']
         let g:syntastic_ruby_checkers = ['rubocop']
