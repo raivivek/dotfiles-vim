@@ -54,19 +54,6 @@ let g:choosewin_color_overlay_current = {
 nmap <Leader>se :<C-u>SaveSession<CR>
 nmap <Leader>os :<C-u>OpenSession last<CR>
 
-map <leader>e :NERDTreeToggle<CR>
-map <leader>f :NERDTreeFind<CR>
-
-let g:NERDShutUp=1
-let NERDTreeShowBookmarks=1
-let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
-let NERDTreeChDirMode=1
-let NERDTreeQuitOnOpen=1
-let NERDTreeMouseMode=2
-let NERDTreeRespectWildIgnore=1
-let NERDTreeKeepTreeInNewTab=1
-let g:nerdtree_tabs_open_on_gui_startup=1
-
 let g:session_directory = $VARPATH.'/session'
 let g:session_default_name = 'last'
 let g:session_default_overwrite = 1
@@ -98,5 +85,39 @@ augroup END
 
 let g:ycm_python_binary_path='/home/vivekrai/.anaconda3/bin/python3'
 
-" vim: set ts=2 sw=2 tw=80 noet :
+" Ditto {{{
+" paragraph, file, sentence
+let g:ditto_mode = 'paragraph'
+let g:ditto_dir = '$VARPATH/Ditto'
+" }}}
+
+" NerdCommenter {{{
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDTrimTrailingWhitespace = 1
+let g:NERDDefaultAlign = 'left'
+" }}}
 "
+" FZF, FZF.vim {{{
+let g:fzf_history_dir = '~/.fzf-history'
+let g:fzf_buffers_jump = 1
+let g:fzf_layout = { 'down': '~20%' }
+let g:fzf_colors =
+\ { 'fg':      ['Normal'],
+  \ 'bg':      ['Normal'],
+  \ 'hl':      ['Comment'],
+  \ 'fg+':     ['CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['Statement'],
+  \ 'info':    ['PreProc'],
+  \ 'prompt':  ['Conditional'],
+  \ 'pointer': ['Exception'],
+  \ 'marker':  ['Keyword'],
+  \ 'spinner': ['Label'],
+  \ 'header':  ['Comment'] }
+map <leader>ff :Files ~<CR>
+map <leader>fb :Buffers<CR>
+map <leader>fl :BLines<CR>
+" }}}
+
+" vim: set ts=2 sw=2 tw=80 noet :

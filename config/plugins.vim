@@ -1,5 +1,6 @@
 " Essential plugins, always loaded {{{
 Plug 'bling/vim-airline'
+Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'tomtom/quickfixsigns_vim'
 Plug 'Shougo/vimproc.vim', {'do': 'make', 'frozen': 'true'}
@@ -15,6 +16,8 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 Plug 'zenbro/mirror.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 " }}}
 
 " File type specific plugins {{{
@@ -48,6 +51,7 @@ Plug 'reedes/vim-litecorrect', {'for': ['text', 'markdown']}
 Plug 'reedes/vim-wordy', {'for': ['text', 'markdown']}
 Plug 'reedes/vim-pencil', {'for': ['text', 'markdown']}
 Plug 'reedes/vim-lexical', {'for': ['text', 'markdown']}
+Plug 'dbmrq/vim-ditto', {'for': ['text', 'markdown']}
 " }}}
 "
 " Themes {{{
