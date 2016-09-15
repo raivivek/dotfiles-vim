@@ -96,4 +96,7 @@ augroup textobj_sentence
   autocmd FileType text call textobj#sentence#init()
 augroup END
 
+let g:ycm_python_binary_path='/home/vivekrai/.anaconda3/bin/python3'
+
 " vim: set ts=2 sw=2 tw=80 noet :
+"
