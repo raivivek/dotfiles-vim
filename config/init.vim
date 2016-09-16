@@ -26,7 +26,6 @@ if has('vim_starting')
   scriptencoding utf-8
 endif
 
-
 " What to save for views:
 set viewoptions-=options viewoptions+=slash,unix
 
@@ -161,6 +160,7 @@ set cmdwinheight=5      " Command-line lines
 " set noequalalways     " Don't resize windows on split or close
 set laststatus=2        " Always show a status line
 set colorcolumn=80      " Highlight the 80th character limit
+
 highlight clear SignColumn
 highlight clear LineNr
 

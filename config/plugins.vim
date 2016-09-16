@@ -1,5 +1,6 @@
 " Essential plugins, always loaded {{{
 Plug 'bling/vim-airline'
+Plug 'bling/vim-airline-themes'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'tomtom/quickfixsigns_vim'
@@ -28,6 +29,7 @@ Plug 'rhysd/accelerated-jk'
 " }}}
 
 " File type specific plugins {{{
+Plug 'othree/html5.vim', {'for': 'html'}
 Plug 'jelera/vim-javascript-syntax', {'for': 'javascript'}
 Plug 'jiangmiao/simple-javascript-indenter', {'for': 'javascript'}
 Plug 'mitsuhiko/vim-jinja', {'for': ['htmljinja', 'jinja']}
@@ -65,4 +67,7 @@ Plug 'tomasr/molokai'
 Plug 'nanotech/jellybeans.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'w0ng/vim-hybrid'
+Plug 'gilgigilgil/anderson.vim'
+Plug 'romainl/flattened'
+Plug 'chriskempson/base16-vim'
 " }}}

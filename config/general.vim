@@ -28,6 +28,11 @@ nnoremap <Leader>gu :GundoToggle<CR>
 nnoremap <Leader>G :Goyo<CR>
 " }}}
 
+" Vim Thesaurus {{{
+nmap <Leader>tf :OnlineThesaurusCurrentWord<CR>
+nmap <Leader>ts :OnlineThesaurusLookup
+" }}}
+
 " YouCompleteMe {{{
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 " let g:ycm_filetype_blacklist = {'markdown' : 1, 'text' : 1, 'unite' : 1}
@@ -40,7 +45,7 @@ let g:ycm_cache_omnifunc = 1
 " }}}
 
 " ChooseWin {{{
-nmap -         <Plug>(choosewin)
+nmap - <Plug>(choosewin)
 
 let g:choosewin_label = 'FGHJKLZXCVBNM'
 let g:choosewin_overlay_enable     = 1
@@ -61,8 +66,8 @@ let g:choosewin_color_overlay_current = {
 " }}}
 
 " Vim Session {{{
-nmap <Leader>se :<C-u>SaveSession<CR>
-nmap <Leader>os :<C-u>OpenSession last<CR>
+nmap <Leader>ss :<C-u>SaveSession<CR>
+nmap <Leader>so :<C-u>OpenSession last<CR>
 
 let g:session_directory = $VARPATH.'/session'
 let g:session_default_name = 'last'
@@ -96,6 +101,12 @@ augroup textobj_sentence
   autocmd FileType text call textobj#sentence#init()
 augroup END
 
+augroup litecorrect
+  autocmd!
+  autocmd FileType markdown,mkd call litecorrect#init()
+  autocmd FileType textile call litecorrect#init()
+augroup END
+
 " Ditto {{{
 " paragraph, file, sentence
 let g:ditto_mode = 'paragraph'
@@ -126,9 +137,10 @@ let g:fzf_colors =
   \ 'marker':  ['Keyword'],
   \ 'spinner': ['Label'],
   \ 'header':  ['Comment'] }
-map <leader>ff :Files ~<CR>
-map <leader>fb :Buffers<CR>
-map <leader>fl :BLines<CR>
+nmap <leader>F :FZF<CR>
+nmap <leader>ff :Files ~<CR>
+nmap <leader>fb :Buffers<CR>
+nmap <leader>fl :BLines<CR>
 " }}}
 "
 
