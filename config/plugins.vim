@@ -10,14 +10,21 @@ Plug 'itchyny/vim-cursorword'
 Plug 'tpope/vim-repeat'
 Plug 'SirVer/ultisnips'
 Plug 'saaguero/vim-textobj-pastedtext'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py', 'frozen': 'true' }
-Plug 't9md/vim-choosewin'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all', 'frozen': 'true' }
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 Plug 'zenbro/mirror.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'jiangmiao/auto-pairs'
+Plug 'sjl/gundo.vim'
+Plug 'junegunn/goyo.vim'
+" }}}
+"
+" Essential, navigation {{{
+Plug 't9md/vim-choosewin'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'rhysd/accelerated-jk'
 " }}}
 
 " File type specific plugins {{{
@@ -35,10 +42,8 @@ Plug 'tpope/vim-endwise', {'for': 'ruby'}
 Plug 'lervag/vimtex', {'for': ['plaintex', 'tex', 'latex', 'bib']}
 Plug 'Valloric/MatchTagAlways', {'for': ['html', 'erb']}
 " }}}
-"
+
 " On-demand loading plugins {{{
-Plug 'sjl/gundo.vim'
-Plug 'junegunn/goyo.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'beloglazov/vim-online-thesaurus', { 'on': ['OnlineThesaurusCurrentWord', 'Thesaurus']}
 " }}}
@@ -53,7 +58,11 @@ Plug 'reedes/vim-pencil', {'for': ['text', 'markdown']}
 Plug 'reedes/vim-lexical', {'for': ['text', 'markdown']}
 Plug 'dbmrq/vim-ditto', {'for': ['text', 'markdown']}
 " }}}
-"
+
 " Themes {{{
 Plug 'reedes/vim-colors-pencil'
+Plug 'tomasr/molokai'
+Plug 'nanotech/jellybeans.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'w0ng/vim-hybrid'
 " }}}

@@ -22,11 +22,9 @@ set guicursor+=n-v-c:blinkon0 " Don't blink cursor in n,v,c mode
 set antialias
 
 if has('vim_starting')
-	set encoding=utf-8
-	scriptencoding utf-8
+  set encoding=utf-8
+  scriptencoding utf-8
 endif
-
-set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 15
 
 
 " What to save for views:
@@ -40,23 +38,23 @@ set sessionoptions-=help
 set sessionoptions-=buffers
 
 if has('clipboard') || has('gui_running')
-	" Do not do anything with system's clipboard
-	set clipboard=
+  " Do not do anything with system's clipboard
+  set clipboard=
 endif
 
 " }}}
 " Wildmenu {{{
 " --------
 if has('wildmenu')
-	set wildmenu
-	set wildchar=<Tab>
-	set wildmode=list:longest,full
-	set complete=.,w,t
-	set wildoptions=tagfile
-	set wildignorecase
-	set wildignore+=.git,*.pyc,*.spl,*.o,*.out,*.exe,*.dll,*.manifest,*~,#*#,%*
-	set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store
-	set wildignore+=.hg,.git,.svn,*.aux,*.out,*.toc,*.orig
+  set wildmenu
+  set wildchar=<Tab>
+  set wildmode=list:longest,full
+  set complete=.,w,t
+  set wildoptions=tagfile
+  set wildignorecase
+  set wildignore+=.git,*.pyc,*.spl,*.o,*.out,*.exe,*.dll,*.manifest,*~,#*#,%*
+  set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store
+  set wildignore+=.hg,.git,.svn,*.aux,*.out,*.toc,*.orig
 endif
 
 " }}}
@@ -89,10 +87,10 @@ set autoread
 " Folds {{{
 " -----
 if has('folding')
-	set foldenable
-	set foldmethod=syntax
-	set foldlevelstart=99
-	set foldtext=FoldText()
+  set foldenable
+  set foldmethod=syntax
+  set foldlevelstart=99
+  set foldtext=FoldText()
 endif
 
 " }}}
@@ -121,7 +119,7 @@ set cpoptions-=m    " showmatch will wait 0.5s or until a char is typed
 " Behavior {{{
 " --------
 set linebreak                   " Break long lines at 'breakat'
-set breakat=\ \	;:,!?           " Long lines break chars
+set breakat=\ \ ;:,!?           " Long lines break chars
 set nostartofline               " Cursor in same column for few commands
 set whichwrap+=h,l,<,>,[,],~    " Move to following line on certain keys
 set splitbelow splitright       " Splits open bottom right
@@ -168,18 +166,18 @@ highlight clear LineNr
 
 " For snippet_complete marker
 if has('conceal') && v:version >= 703
-	set conceallevel=2 concealcursor=niv
+  set conceallevel=2 concealcursor=niv
 endif
 
 if has('gui_running')
-	" Remove toolbar, scrollbar and any noise from GUI
-	set guioptions-=T
-	set guioptions-=r
-	set guioptions-=L
-	set guioptions-=m
-	set guioptions+=a
-	set guifont=Source\ Code\ Pro\ Medium\ 10
-	set lines=40
+  " Remove toolbar, scrollbar and any noise from GUI
+  set guioptions-=T
+  set guioptions-=r
+  set guioptions-=L
+  set guioptions-=m
+  set guioptions+=a
+  set guifont=Source\ Code\ Pro\ Medium\ 10
+  set lines=40
 endif
 
 " vim: set ts=2 sw=2 tw=80 noet :
