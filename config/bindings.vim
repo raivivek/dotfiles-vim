@@ -93,9 +93,7 @@ function! s:NextWindow() "{{{
 endfunction "}}}
 
 function! s:NextWindowOrTab() "{{{
-  if tabpagenr('$') == 1 && winnr('$') == 1
-    call s:split_nicely()
-  elseif winnr() < winnr('$')
+  if winnr() < winnr('$')
     wincmd w
   else
     tabnext

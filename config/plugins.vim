@@ -1,6 +1,5 @@
 " Essential plugins, always loaded {{{
 Plug 'bling/vim-airline'
-Plug 'bling/vim-airline-themes'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'tomtom/quickfixsigns_vim'
@@ -19,6 +18,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'sjl/gundo.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'dietsche/vim-lastplace'
+" Plug 'mhinz/vim-startify'
 " }}}
 "
 " Essential, navigation {{{
