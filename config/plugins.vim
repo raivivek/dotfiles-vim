@@ -20,6 +20,8 @@ Plug 'sjl/gundo.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'dietsche/vim-lastplace'
+Plug 'honza/vim-snippets'
+Plug 'ervandew/supertab'
 " Plug 'mhinz/vim-startify'
 " }}}
 "

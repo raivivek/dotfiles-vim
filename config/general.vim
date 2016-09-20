@@ -42,6 +42,9 @@ let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_goto_buffer_command='vertical-split'
 let g:ycm_cache_omnifunc = 1
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
 " }}}
 
 " ChooseWin {{{
@@ -105,6 +108,7 @@ augroup litecorrect
   autocmd!
   autocmd FileType markdown,mkd call litecorrect#init()
   autocmd FileType textile call litecorrect#init()
+  autocmd FileType text call litecorrect#init()
 augroup END
 
 " Ditto {{{
@@ -154,4 +158,8 @@ nmap j <Plug>(accelerated_jk_gj)
 nmap k <Plug>(accelerated_jk_gk)
 let g:accelerated_jk_enable_deceleration = 1
 " }}}
+
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 " vim: set ts=2 sw=2 tw=80 noet :
