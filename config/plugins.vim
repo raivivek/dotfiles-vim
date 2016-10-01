@@ -1,5 +1,6 @@
 " Essential plugins, always loaded {{{
 Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'tomtom/quickfixsigns_vim'
@@ -22,6 +23,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'dietsche/vim-lastplace'
 Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
+Plug 'reedes/vim-thematic'
 " Plug 'mhinz/vim-startify'
 " }}}
 "
@@ -47,15 +49,16 @@ Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
 Plug 'tpope/vim-endwise', {'for': 'ruby'}
 Plug 'lervag/vimtex', {'for': ['plaintex', 'tex', 'latex', 'bib']}
 Plug 'Valloric/MatchTagAlways', {'for': ['html', 'erb']}
+Plug 'nathanaelkane/vim-indent-guides'
 " }}}
 
 " On-demand loading plugins {{{
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'beloglazov/vim-online-thesaurus', { 'on': ['OnlineThesaurusCurrentWord', 'Thesaurus']}
 " }}}
-"
+
 " Writing and Text-Objects plugins {{{
 Plug 'kana/vim-textobj-user'
+Plug 'vim-scripts/LanguageTool', {'for': ['text', 'markdown']}
 Plug 'reedes/vim-textobj-quote', {'for': ['text', 'markdown']}
 Plug 'reedes/vim-textobj-sentence', {'for': ['text', 'markdown']}
 Plug 'reedes/vim-litecorrect', {'for': ['text', 'markdown']}

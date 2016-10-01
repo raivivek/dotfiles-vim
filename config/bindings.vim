@@ -23,6 +23,10 @@ cabbrev Wq :wq
 cabbrev qw :wq
 cabbrev Qa :qa
 
+" retab
+nmap <Leader>rt :retab<CR>
+vmap <Leader>rt :retab<CR>
+
 " Select last paste
 nnoremap <expr> gp '`['.strpart(getregtype(), 0, 1).'`]'
 

@@ -5,6 +5,8 @@
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_left_sep=' '
 let g:airline_right_sep=' '
+let g:airline_detect_spell=0
+let g:airline#extensions#whitespace#enabled = 0
 " }}}
 
 " {{{
@@ -162,4 +164,42 @@ let g:accelerated_jk_enable_deceleration = 1
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+let g:thematic#themes = {
+\ 'molokai' :{'colorscheme': 'molokai',
+\              'background': 'dark',
+\              'airline-theme': 'dark',
+\              'font-size': 14,
+\              'typeface': 'mononoki',
+\              'sign-column-color-fix': 1,
+\            },
+\ }
+
+" Goyo.vim {{{
+let g:goyo_width=100
+
+function! s:goyo_enter()
+  if has('gui_running')
+    set background=dark
+    set linespace=2
+    set guifont=mononoki\ 16
+  endif
+endfunction
+
+function! s:goyo_leave()
+  if has('gui_running')
+    set background=dark
+    set linespace=0
+    set guifont=mononoki\ 14
+  endif
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+" }}}
+
+" LanguageTool {{{
+let g:languagetool_jar='$HOME/.local/languagetool/languagetool-commandline.jar'
+" }}}
+"
 " vim: set ts=2 sw=2 tw=80 noet :
