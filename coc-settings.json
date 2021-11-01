@@ -1,0 +1,5 @@
+{
+  "python.jediEnabled": false,
+  "python.formatting.provider": "yapf",
+  "python.linting.pydocstyleEnabled": false
+}
