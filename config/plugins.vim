@@ -17,6 +17,8 @@ Plug 'justinmk/vim-sneak'
 Plug 'github/copilot.vim'
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'rafamadriz/friendly-snippets'
 Plug 'rhysd/accelerated-jk'
 Plug 'jiangmiao/auto-pairs'
