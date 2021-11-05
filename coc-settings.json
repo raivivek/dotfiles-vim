@@ -1,5 +1,10 @@
 {
-  "python.jediEnabled": false,
   "python.formatting.provider": "yapf",
-  "python.linting.pydocstyleEnabled": false
+  "python.linting.pydocstyleEnabled": false,
+  "languageserver": {
+    "nim": {
+      "command": "nimlsp",
+      "filetypes": ["nim"]
+    }
+  }
 }

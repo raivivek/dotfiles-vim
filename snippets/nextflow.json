@@ -1,0 +1,26 @@
+{
+  "Process Definition": {
+    "prefix": ["process"],
+    "body": [
+      "process ${1:name} {",
+      "\tinput:",
+      "\t$2",
+      "\toutput:",
+      "\t$3",
+      "\t'''",
+      "\t$0",
+      "\t'''",
+      "}"
+    ],
+    "description": "Nextflow process definition"
+  },
+  "Workflow": {
+    "prefix": ["workflow"],
+    "body": [
+      "workflow {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Nextflow workflow"
+  }
+}
