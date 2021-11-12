@@ -26,9 +26,9 @@ endif
 " Setup plugins
 call plug#begin(g:my_vim_dir . '/plugged')
   " Always loaded
-  " -------------
   Plug 'nvim-lualine/lualine.nvim' " lua line
   Plug 'tpope/vim-commentary' " Quickly comment and such
+  Plug 'Yggdroot/indentLine' " Indent line
   Plug 'windwp/nvim-autopairs' " Auto pair brackets and tags
   Plug 'tpope/vim-sleuth' " Automatically set tabindent etc
   Plug 'Jorengarenar/vim-MvVis' " move visual selection
@@ -48,7 +48,6 @@ call plug#begin(g:my_vim_dir . '/plugged')
   Plug 't9md/vim-choosewin' " Choose window
 
   " Experience++
-  " ------------
   Plug 'nvim-lua/plenary.nvim' " Important dependency
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
@@ -58,6 +57,7 @@ call plug#begin(g:my_vim_dir . '/plugged')
   Plug 'github/copilot.vim' " Copilot
   Plug 'rafamadriz/friendly-snippets' " Snippets
   Plug 'ojroques/vim-oscyank'
+  Plug 'romgrk/barbar.nvim' " Vim-Barbar (tabline management)
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'nvim-treesitter/nvim-treesitter-textobjects'
   "Plug 'neovim/nvim-lspconfig'
@@ -67,7 +67,6 @@ call plug#begin(g:my_vim_dir . '/plugged')
   "Plug 'hrsh7th/vim-vsnip-integ'
 
   " Can live without, but really shouldn't
-  " --------------------------------------
   Plug 'editorconfig/editorconfig-vim'
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'FooSoft/vim-argwrap'
@@ -78,8 +77,13 @@ call plug#end()
 
 
 " ============= Plugins config ============== "{{{
-let loaded_netrw = 0                                    " diable netew
-let g:omni_sql_no_default_maps = 1                      " disable sql omni completion
+let g:loaded_netrw = 1 " diable netrw
+let g:loaded_netrwPlugin = 1 " disable netrw
+let g:loaded_vimballPlugin = 1 " disable vimball
+let g:omni_sql_no_default_maps = 1 " disable sql omni completion
+let g:loaded_getscriptPlugin = 1 " disable getscript
+let g:loaded_2html_plugin = 1 " disable 2html
+let g:loaded_rrhelper = 1
 let g:loaded_python_provider = 0
 let g:loaded_perl_provider = 0
 let g:loaded_ruby_provider = 0
@@ -116,7 +120,8 @@ if has('wildmenu')
   set wildmenu
   set wildchar=<Tab>
   set wildmode=list:longest,full
-  set complete=.,w,t
+  set complete-=i
+  set complete-=t
   set wildoptions=tagfile
   set wildignorecase
   set wildignore+=.git,*.pyc,*.spl,*.o,*.out,*.exe,*.dll,*.manifest,*~,#*#,%*
@@ -129,7 +134,7 @@ endif
 " Vim Directories {{{
 " ---------------
 if exists("+spelllang")
-    set spelllang=en_us
+  set spelllang=en_us
 endif
 
 set undofile noswapfile nobackup nowritebackup
@@ -165,26 +170,24 @@ set re=1
 
 " Searching {{{
 " ---------
-set ignorecase      " Search ignoring case
 set smartcase       " Keep case when searching with *
 set infercase
 set incsearch       " Incremental search
 set hlsearch        " Highlight search results
 set wrapscan        " Searches wrap around the end of the file
 set showmatch       " Jump to matching bracket
-set matchpairs+=<:> " Add HTML brackets to pair matching
 set matchtime=1     " Tenths of a second to show the matching paren
 set cpoptions-=m    " showmatch will wait 0.5s or until a char is typed
 " }}}
 
 " Behavior {{{
 " --------
-set nostartofline               " Cursor in same column for few commands
 set whichwrap+=h,l,<,>,[,],~    " Move to following line on certain keys
 set splitbelow splitright       " Splits open bottom right
 set switchbuf=usetab,split      " Switch buffer behavior
 set backspace=indent,eol,start  " Intuitive backspacing in insert mode
 set diffopt=filler,iwhite       " Diff mode: show fillers, ignore whitespace
+set clipboard=unnamedplus
 set complete=.                  " No wins, buffs, tags, include scanning
 set nowrap                      " No wrap by default
 " }}}
@@ -215,6 +218,12 @@ if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<C-R>
 endif
 
+nnoremap [e  :<c-u>execute 'move -1-'. v:count1<cr>
+nnoremap ]e  :<c-u>execute 'move +'. v:count1<cr>
+
+nnoremap [<space>  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
+nnoremap ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
+
 " Change directory to current file path
 if !exists('g:no_autochdir')
   autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
@@ -230,6 +239,12 @@ function! s:WhitespaceErase(line1, line2)
   silent! execute ':'.a:line1.','.a:line2.'s/\s\+$//'
   call setpos('.', l:save_cursor)
 endfunction
+
+" Remember last position in file
+autocmd BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+    \   execute "normal! g`\"" |
+    \ endif
 " }}}
 
 " Theme {{{

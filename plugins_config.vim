@@ -3,9 +3,10 @@ let mapleader=","
 " Telescope {{{
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fg <cmd>Telescope git_files<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fr <cmd>Telescope live_grep<cr>
 " }}}
 
 " General {{{
@@ -35,18 +36,17 @@ cnoremap <C-s> <C-u>w<CR>
 nnoremap <silent> [Window]p  :<C-u>call <SID>split_nicely()<CR>
 nnoremap <silent> [Window]v  :<C-u>split<CR>
 nnoremap <silent> [Window]g  :<C-u>vsplit<CR>
-nnoremap <silent> [Window]t  :tabnew<CR>
+nnoremap <silent> [Window]t  :enew<CR>
 nnoremap <silent> [Window]o  :<C-u>only<CR>
 nnoremap <silent> [Window]D  :<C-u>call <SID>CustomBufferDelete()<CR>
 nnoremap <silent> [Window]x  :<C-u>call <SID>CustomBufferDeleteNew()<CR>
 nnoremap <silent> [Window]\  :b#<CR>
-nnoremap <silent> [Window]q  :close<CR>
-nnoremap <silent> [Window]Q  :bdelete<CR>
+nnoremap <silent> [Window]q  :BufferClose<CR>
+nnoremap <silent> [Window]Q  :BufferDelete<CR>
 nnoremap <silent> [Window]c :<C-u>call <SID>smart_close()<CR>
 
-" Move around windows beyond tabs
-nnoremap <silent> <Tab> :call <SID>NextWindowOrTab()<CR>
-nnoremap <silent> <S-Tab> :call <SID>PreviousWindowOrTab()<CR>
+nnoremap <silent> <Tab> :BufferNext<CR>
+nnoremap <silent> <S-Tab> :BufferPrev<CR>
 
 " Split current buffer, go to previous window and previous buffer
 nnoremap <Leader>sv :split<CR>:wincmd p<CR>:e#<CR>
@@ -57,32 +57,6 @@ function! s:smart_close() "
     close
   else
     call s:alternate_buffer()
-  endif
-endfunction "}}}
-
-function! s:NextWindow() "
-  if winnr('$') == 1
-    silent! normal! ``z.
-  else
-    wincmd w
-  endif
-endfunction "}}}
-
-function! s:NextWindowOrTab() "
-  if winnr() < winnr('$')
-    wincmd w
-  else
-    tabnext
-    1wincmd w
-  endif
-endfunction "}}}
-
-function! s:PreviousWindowOrTab() "
-  if winnr() > 1
-    wincmd W
-  else
-    tabprevious
-    execute winnr('$') . 'wincmd w'
   endif
 endfunction "}}}
 
