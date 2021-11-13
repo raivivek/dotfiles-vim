@@ -14,6 +14,33 @@ function! s:source_file(path)
 endfunction
 "}}}
 
+" ============ Skip loading some plugins ==== "{{{
+"
+let g:loaded_netrw = 1 " diable netrw
+let g:loaded_netrwPlugin = 1 " disable netrw
+let g:loaded_netrwSettings = 1 " disable netrw
+let g:loaded_netrwFileHandlers = 1 " disable netrw
+let g:loaded_vimballPlugin = 1 " disable vimball
+let g:loaded_zip = 1
+let g:loaded_zipPlugin = 1
+let g:loaded_zipSettings = 1
+let g:loaded_tar = 1
+let g:loaded_tarPlugin = 1
+let g:loaded_getscript = 1
+let g:loaded_getscriptPlugin = 1 " disable getscript
+let g:loaded_vimball = 1
+let g:loaded_vimballPlugin = 1
+let g:loaded_2html_plugin = 1 " disable 2html
+let g:loaded_logipat = 1
+let g:loaded_rrhelper = 1
+let g:loaded_spellfile_plugin = 1
+let g:loaded_matchit = 1
+let g:omni_sql_no_default_maps = 1 " disable sql omni completion
+let g:loaded_perl_provider = 1
+let g:loaded_python_provider = 0
+let g:loaded_ruby_provider = 0
+" }}}
+
 " ============= Vim-Plug ============== "{{{
 "
 " Auto-install vim-plug
@@ -28,7 +55,7 @@ call plug#begin(g:my_vim_dir . '/plugged')
   " Always loaded
   Plug 'nvim-lualine/lualine.nvim' " lua line
   Plug 'tpope/vim-commentary' " Quickly comment and such
-  Plug 'Yggdroot/indentLine' " Indent line
+  Plug 'lukas-reineke/indent-blankline.nvim' " Indent line
   Plug 'windwp/nvim-autopairs' " Auto pair brackets and tags
   Plug 'tpope/vim-sleuth' " Automatically set tabindent etc
   Plug 'Jorengarenar/vim-MvVis' " move visual selection
@@ -42,7 +69,7 @@ call plug#begin(g:my_vim_dir . '/plugged')
   Plug 'folke/which-key.nvim' " Visualize key-mappings
   Plug 'lewis6991/gitsigns.nvim' " Add git signs in gutter
   Plug 'morhetz/gruvbox' " Gruvbox Theme
-  Plug 'dracula/vim' " Dracula Theme
+  Plug 'Mofiqul/dracula.nvim' " Dracula Theme
   Plug 'hzchirs/vim-material' " material color themes
   Plug 'psliwka/vim-smoothie' " Smooth scrolling
   Plug 't9md/vim-choosewin' " Choose window
@@ -76,31 +103,13 @@ call plug#end()
 " }}}
 
 
-" ============= Plugins config ============== "{{{
-let g:loaded_netrw = 1 " diable netrw
-let g:loaded_netrwPlugin = 1 " disable netrw
-let g:loaded_vimballPlugin = 1 " disable vimball
-let g:omni_sql_no_default_maps = 1 " disable sql omni completion
-let g:loaded_getscriptPlugin = 1 " disable getscript
-let g:loaded_2html_plugin = 1 " disable 2html
-let g:loaded_rrhelper = 1
-let g:loaded_python_provider = 0
-let g:loaded_perl_provider = 0
-let g:loaded_ruby_provider = 0
-
-call s:source_file('plugins_config.vim')
-" }}}
-
-
 " ====== Options, commands, and editor settings ====== "{{{
 "
 " General {{{
 " -------
 set termguicolors
 
-filetype plugin indent on
-syntax enable
-set mouse=nvi                " Disable mouse in command-line mode
+set mouse=a
 set modeline                 " automatically setting options from modelines
 set report=0                 " Don't report on line changes
 set hidden                   " hide buffers when abandoned instead of unload
@@ -198,7 +207,7 @@ set noshowmode " Don't show mode in cmd window
 set noshowcmd " Don't show command in status line
 set shortmess=caIfilmnrxoOtT " Shorten messages and don't show intro
 set cmdheight=1
-set updatetime=300
+set updatetime=250
 set number " Show line numbers
 set list " Show hidden characters
 set winwidth=30 " Minimum width for current window

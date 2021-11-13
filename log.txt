@@ -1,0 +1,345 @@
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.046  000.046: --- NVIM STARTING ---
+001.052  001.006: locale set
+001.652  000.600: inits 1
+001.676  000.024: window checked
+007.586  005.910: parsing arguments
+008.183  000.597: expanding arguments
+008.272  000.089: inits 2
+008.901  000.630: init highlight
+008.903  000.002: waiting for UI
+012.340  003.436: done waiting for UI
+012.366  000.027: init screen for UI
+012.400  000.034: init default mappings
+012.559  000.159: init default autocommands
+016.766  002.649  002.649: sourcing /Users/vivekrai/.config/nvim/autoload/plug.vim
+040.766  000.055  000.055: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/elixir.vim
+040.906  000.035  000.035: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/fennel.vim
+041.041  000.037  000.037: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/fish.vim
+041.169  000.032  000.032: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/gdresource.vim
+041.304  000.031  000.031: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/gdscript.vim
+041.431  000.029  000.029: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/glimmer.vim
+041.556  000.028  000.028: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/gomod.vim
+041.697  000.043  000.043: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/graphql.vim
+041.840  000.050  000.050: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/hcl.vim
+041.975  000.031  000.031: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/heex.vim
+042.109  000.033  000.033: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/hjson.vim
+042.240  000.034  000.034: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/json5.vim
+042.368  000.030  000.030: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/julia.vim
+042.506  000.041  000.041: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/ledger.vim
+042.638  000.035  000.035: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/nix.vim
+042.777  000.042  000.042: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/ql.vim
+042.922  000.052  000.052: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/query.vim
+043.054  000.034  000.034: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/surface.vim
+043.185  000.034  000.034: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/teal.vim
+043.320  000.038  000.038: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/tlaplus.vim
+043.460  000.036  000.036: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/yang.vim
+043.604  000.039  000.039: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/zig.vim
+043.945  000.043  000.043: sourcing /Users/vivekrai/.config/nvim/plugged/nextflow-vim/ftdetect/nextflow.vim
+044.387  000.074  000.074: sourcing /Users/vivekrai/.config/nvim/plugged/vim-snakemake/ftdetect/snakemake.vim
+045.290  014.861  013.929: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/filetype.vim
+045.936  000.073  000.073: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/ftplugin.vim
+046.549  000.064  000.064: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/indent.vim
+047.430  000.136  000.136: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/syntax/synload.vim
+047.559  000.846  000.710: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/syntax/syntax.vim
+080.554  032.856  032.856: sourcing /Users/vivekrai/.config/nvim/plugins_config.vim
+087.129  004.118  004.118: sourcing /Users/vivekrai/.config/nvim/plugged/dracula.nvim/colors/dracula.lua
+091.441  003.068  003.068: sourcing /Users/vivekrai/.config/nvim/plugged/dracula.nvim/colors/dracula.lua
+091.523  078.640  020.104: sourcing /Users/vivekrai/.config/nvim/init.vim
+091.627  000.428: sourcing vimrc file(s)
+093.237  000.464  000.464: sourcing /Users/vivekrai/.config/nvim/plugged/vim-commentary/plugin/commentary.vim
+095.410  000.063  000.063: sourcing /Users/vivekrai/.config/nvim/plugged/indent-blankline.nvim/autoload/indent_blankline.vim
+095.810  001.704  001.640: sourcing /Users/vivekrai/.config/nvim/plugged/indent-blankline.nvim/plugin/indent_blankline.vim
+096.678  000.381  000.381: sourcing /Users/vivekrai/.config/nvim/plugged/vim-sleuth/plugin/sleuth.vim
+097.246  000.166  000.166: sourcing /Users/vivekrai/.config/nvim/plugged/vim-MvVis/plugin/MvVis.vim
+098.086  000.159  000.159: sourcing /Users/vivekrai/.config/nvim/plugged/coc.nvim/autoload/coc/rpc.vim
+099.208  000.880  000.880: sourcing /Users/vivekrai/.config/nvim/plugged/coc.nvim/autoload/coc/util.vim
+100.300  000.389  000.389: sourcing /Users/vivekrai/.config/nvim/plugged/coc.nvim/autoload/coc/client.vim
+106.682  009.114  007.685: sourcing /Users/vivekrai/.config/nvim/plugged/coc.nvim/plugin/coc.vim
+107.871  000.765  000.765: sourcing /Users/vivekrai/.config/nvim/plugged/vim-eunuch/plugin/eunuch.vim
+108.886  000.632  000.632: sourcing /Users/vivekrai/.config/nvim/plugged/vim-surround/plugin/surround.vim
+109.769  000.159  000.159: sourcing /Users/vivekrai/.config/nvim/plugged/vim-mundo/autoload/mundo/util.vim
+110.102  000.821  000.661: sourcing /Users/vivekrai/.config/nvim/plugged/vim-mundo/plugin/mundo.vim
+110.496  000.049  000.049: sourcing /Users/vivekrai/.config/nvim/plugged/rainbow/plugin/rainbow_main.vim
+110.916  000.042  000.042: sourcing /Users/vivekrai/.config/nvim/plugged/which-key.nvim/plugin/which-key.vim
+111.628  000.237  000.237: sourcing /Users/vivekrai/.config/nvim/plugged/vim-smoothie/plugin/smoothie.vim
+112.323  000.370  000.370: sourcing /Users/vivekrai/.config/nvim/plugged/vim-choosewin/plugin/choosewin.vim
+112.747  000.074  000.074: sourcing /Users/vivekrai/.config/nvim/plugged/plenary.nvim/plugin/plenary.vim
+113.369  000.232  000.232: sourcing /Users/vivekrai/.config/nvim/plugged/telescope.nvim/plugin/telescope.vim
+116.443  002.496  002.496: sourcing /Users/vivekrai/.config/nvim/plugged/vim-sneak/plugin/sneak.vim
+117.518  000.587  000.587: sourcing /Users/vivekrai/.config/nvim/plugged/copilot.vim/plugin/copilot.vim
+118.404  000.359  000.359: sourcing /Users/vivekrai/.config/nvim/plugged/vim-oscyank/plugin/oscyank.vim
+120.948  000.140  000.140: sourcing /Users/vivekrai/.config/nvim/plugged/barbar.nvim/autoload/bufferline/highlight.vim
+130.960  012.088  011.948: sourcing /Users/vivekrai/.config/nvim/plugged/barbar.nvim/plugin/bufferline.vim
+142.693  011.342  011.342: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/plugin/nvim-treesitter.vim
+146.512  003.310  003.310: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter-textobjects/plugin/nvim-treesitter-textobjects.vim
+147.810  000.897  000.897: sourcing /Users/vivekrai/.config/nvim/plugged/editorconfig-vim/plugin/editorconfig.vim
+148.284  000.096  000.096: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-web-devicons/plugin/nvim-web-devicons.vim
+149.435  000.251  000.251: sourcing /Users/vivekrai/.config/nvim/plugged/vim-argwrap/autoload/argwrap.vim
+149.617  001.001  000.751: sourcing /Users/vivekrai/.config/nvim/plugged/vim-argwrap/plugin/argwrap.vim
+151.425  000.326  000.326: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/gzip.vim
+151.584  000.034  000.034: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/health.vim
+151.842  000.138  000.138: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/man.vim
+151.997  000.039  000.039: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/matchit.vim
+152.362  000.249  000.249: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/matchparen.vim
+152.542  000.047  000.047: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/netrwPlugin.vim
+153.958  000.331  000.331: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/autoload/remote/host.vim
+155.061  000.279  000.279: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/autoload/remote/define.vim
+156.089  003.087  002.477: sourcing /Users/vivekrai/.local/share/nvim/rplugin.vim
+156.101  003.440  000.353: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/rplugin.vim
+156.462  000.230  000.230: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/shada.vim
+156.637  000.042  000.042: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/spellfile.vim
+156.801  000.048  000.048: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/tarPlugin.vim
+156.964  000.041  000.041: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/tohtml.vim
+157.129  000.053  000.053: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/tutor.vim
+157.293  000.050  000.050: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/zipPlugin.vim
+163.337  019.747: loading rtp plugins
+163.639  000.302: loading packages
+163.737  000.097: loading after plugins
+163.765  000.029: inits 3
+169.191  005.426: reading ShaDa
+175.141  005.950: opening buffers
+175.603  000.463: BufEnter autocommands
+175.608  000.005: editing files in windows
+178.079  002.471: VimEnter autocommands
+178.083  000.004: UIEnter autocommands
+179.229  000.369  000.369: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/autoload/provider/clipboard.vim
+179.244  000.791: before starting main loop
+1023.710  001.496  001.496: sourcing /Users/vivekrai/.config/nvim/plugged/coc.nvim/autoload/coc/float.vim
+1046.402  865.662: first screen update
+1046.407  000.005: --- NVIM STARTED ---
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.008  000.008: --- NVIM STARTING ---
+001.294  001.286: locale set
+002.142  000.848: inits 1
+002.168  000.027: window checked
+007.297  005.129: parsing arguments
+008.376  001.079: expanding arguments
+008.479  000.104: inits 2
+009.234  000.755: init highlight
+009.238  000.004: waiting for UI
+012.387  003.149: done waiting for UI
+012.412  000.026: init screen for UI
+012.446  000.034: init default mappings
+012.606  000.160: init default autocommands
+016.814  002.590  002.590: sourcing /Users/vivekrai/.config/nvim/autoload/plug.vim
+041.557  000.059  000.059: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/elixir.vim
+041.686  000.027  000.027: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/fennel.vim
+041.818  000.035  000.035: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/fish.vim
+041.948  000.034  000.034: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/gdresource.vim
+042.079  000.027  000.027: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/gdscript.vim
+042.205  000.027  000.027: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/glimmer.vim
+042.327  000.030  000.030: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/gomod.vim
+042.463  000.040  000.040: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/graphql.vim
+042.599  000.042  000.042: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/hcl.vim
+042.721  000.029  000.029: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/heex.vim
+042.861  000.033  000.033: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/hjson.vim
+042.988  000.029  000.029: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/json5.vim
+043.113  000.029  000.029: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/julia.vim
+043.248  000.039  000.039: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/ledger.vim
+043.378  000.034  000.034: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/nix.vim
+043.515  000.041  000.041: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/ql.vim
+043.661  000.052  000.052: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/query.vim
+043.793  000.033  000.033: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/surface.vim
+044.018  000.129  000.129: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/teal.vim
+044.191  000.038  000.038: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/tlaplus.vim
+044.337  000.035  000.035: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/yang.vim
+044.468  000.035  000.035: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/zig.vim
+044.781  000.041  000.041: sourcing /Users/vivekrai/.config/nvim/plugged/nextflow-vim/ftdetect/nextflow.vim
+045.044  000.053  000.053: sourcing /Users/vivekrai/.config/nvim/plugged/vim-snakemake/ftdetect/snakemake.vim
+045.926  014.917  013.945: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/filetype.vim
+046.557  000.070  000.070: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/ftplugin.vim
+047.155  000.060  000.060: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/indent.vim
+048.017  000.126  000.126: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/syntax/synload.vim
+048.142  000.822  000.697: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/syntax/syntax.vim
+081.207  032.926  032.926: sourcing /Users/vivekrai/.config/nvim/plugins_config.vim
+087.893  004.146  004.146: sourcing /Users/vivekrai/.config/nvim/plugged/dracula.nvim/colors/dracula.lua
+093.280  003.583  003.583: sourcing /Users/vivekrai/.config/nvim/plugged/dracula.nvim/colors/dracula.lua
+093.321  080.347  021.233: sourcing /Users/vivekrai/.config/nvim/init.vim
+093.383  000.429: sourcing vimrc file(s)
+095.447  000.287  000.287: sourcing /Users/vivekrai/.config/nvim/plugged/vim-commentary/plugin/commentary.vim
+096.545  000.058  000.058: sourcing /Users/vivekrai/.config/nvim/plugged/indent-blankline.nvim/autoload/indent_blankline.vim
+096.944  001.111  001.053: sourcing /Users/vivekrai/.config/nvim/plugged/indent-blankline.nvim/plugin/indent_blankline.vim
+098.694  001.295  001.295: sourcing /Users/vivekrai/.config/nvim/plugged/vim-sleuth/plugin/sleuth.vim
+099.557  000.189  000.189: sourcing /Users/vivekrai/.config/nvim/plugged/vim-MvVis/plugin/MvVis.vim
+100.419  000.157  000.157: sourcing /Users/vivekrai/.config/nvim/plugged/coc.nvim/autoload/coc/rpc.vim
+101.611  000.951  000.951: sourcing /Users/vivekrai/.config/nvim/plugged/coc.nvim/autoload/coc/util.vim
+102.707  000.343  000.343: sourcing /Users/vivekrai/.config/nvim/plugged/coc.nvim/autoload/coc/client.vim
+111.085  011.201  009.749: sourcing /Users/vivekrai/.config/nvim/plugged/coc.nvim/plugin/coc.vim
+112.612  000.913  000.913: sourcing /Users/vivekrai/.config/nvim/plugged/vim-eunuch/plugin/eunuch.vim
+114.337  001.077  001.077: sourcing /Users/vivekrai/.config/nvim/plugged/vim-surround/plugin/surround.vim
+115.350  000.163  000.163: sourcing /Users/vivekrai/.config/nvim/plugged/vim-mundo/autoload/mundo/util.vim
+115.859  001.028  000.865: sourcing /Users/vivekrai/.config/nvim/plugged/vim-mundo/plugin/mundo.vim
+116.437  000.075  000.075: sourcing /Users/vivekrai/.config/nvim/plugged/rainbow/plugin/rainbow_main.vim
+117.130  000.074  000.074: sourcing /Users/vivekrai/.config/nvim/plugged/which-key.nvim/plugin/which-key.vim
+118.403  000.290  000.290: sourcing /Users/vivekrai/.config/nvim/plugged/vim-smoothie/plugin/smoothie.vim
+119.967  000.544  000.544: sourcing /Users/vivekrai/.config/nvim/plugged/vim-choosewin/plugin/choosewin.vim
+120.628  000.082  000.082: sourcing /Users/vivekrai/.config/nvim/plugged/plenary.nvim/plugin/plenary.vim
+121.283  000.245  000.245: sourcing /Users/vivekrai/.config/nvim/plugged/telescope.nvim/plugin/telescope.vim
+123.846  002.014  002.014: sourcing /Users/vivekrai/.config/nvim/plugged/vim-sneak/plugin/sneak.vim
+125.040  000.709  000.709: sourcing /Users/vivekrai/.config/nvim/plugged/copilot.vim/plugin/copilot.vim
+126.054  000.427  000.427: sourcing /Users/vivekrai/.config/nvim/plugged/vim-oscyank/plugin/oscyank.vim
+128.716  000.142  000.142: sourcing /Users/vivekrai/.config/nvim/plugged/barbar.nvim/autoload/bufferline/highlight.vim
+138.382  011.757  011.615: sourcing /Users/vivekrai/.config/nvim/plugged/barbar.nvim/plugin/bufferline.vim
+150.846  011.912  011.912: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/plugin/nvim-treesitter.vim
+155.862  004.418  004.418: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter-textobjects/plugin/nvim-treesitter-textobjects.vim
+157.188  000.853  000.853: sourcing /Users/vivekrai/.config/nvim/plugged/editorconfig-vim/plugin/editorconfig.vim
+157.647  000.082  000.082: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-web-devicons/plugin/nvim-web-devicons.vim
+159.048  000.273  000.273: sourcing /Users/vivekrai/.config/nvim/plugged/vim-argwrap/autoload/argwrap.vim
+159.234  001.231  000.958: sourcing /Users/vivekrai/.config/nvim/plugged/vim-argwrap/plugin/argwrap.vim
+161.418  000.369  000.369: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/gzip.vim
+161.591  000.035  000.035: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/health.vim
+161.878  000.165  000.165: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/man.vim
+162.043  000.039  000.039: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/matchit.vim
+162.424  000.256  000.256: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/matchparen.vim
+162.605  000.047  000.047: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/netrwPlugin.vim
+164.272  000.345  000.345: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/autoload/remote/host.vim
+165.420  000.276  000.276: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/autoload/remote/define.vim
+166.443  003.234  002.613: sourcing /Users/vivekrai/.local/share/nvim/rplugin.vim
+166.456  003.637  000.403: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/rplugin.vim
+166.858  000.262  000.262: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/shada.vim
+167.043  000.043  000.043: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/spellfile.vim
+167.221  000.048  000.048: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/tarPlugin.vim
+167.394  000.042  000.042: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/tohtml.vim
+167.573  000.054  000.054: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/tutor.vim
+167.748  000.051  000.051: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/zipPlugin.vim
+173.886  023.644: loading rtp plugins
+174.220  000.334: loading packages
+174.320  000.101: loading after plugins
+174.349  000.028: inits 3
+180.698  006.350: reading ShaDa
+184.202  003.504: opening buffers
+184.711  000.508: BufEnter autocommands
+184.716  000.005: editing files in windows
+187.292  002.576: VimEnter autocommands
+187.296  000.004: UIEnter autocommands
+188.394  000.361  000.361: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/autoload/provider/clipboard.vim
+188.408  000.751: before starting main loop
+905.952  001.778  001.778: sourcing /Users/vivekrai/.config/nvim/plugged/coc.nvim/autoload/coc/float.vim
+929.656  739.471: first screen update
+929.661  000.005: --- NVIM STARTED ---
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.007  000.007: --- NVIM STARTING ---
+001.038  001.030: locale set
+001.668  000.630: inits 1
+001.695  000.028: window checked
+006.529  004.833: parsing arguments
+007.821  001.292: expanding arguments
+007.938  000.117: inits 2
+008.567  000.629: init highlight
+008.569  000.002: waiting for UI
+011.544  002.975: done waiting for UI
+011.573  000.029: init screen for UI
+011.609  000.036: init default mappings
+011.765  000.156: init default autocommands
+015.811  002.490  002.490: sourcing /Users/vivekrai/.config/nvim/autoload/plug.vim
+040.231  000.054  000.054: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/elixir.vim
+040.367  000.029  000.029: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/fennel.vim
+040.496  000.032  000.032: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/fish.vim
+040.628  000.034  000.034: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/gdresource.vim
+040.747  000.025  000.025: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/gdscript.vim
+040.873  000.030  000.030: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/glimmer.vim
+040.997  000.027  000.027: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/gomod.vim
+041.219  000.059  000.059: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/graphql.vim
+041.379  000.046  000.046: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/hcl.vim
+041.523  000.032  000.032: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/heex.vim
+041.649  000.029  000.029: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/hjson.vim
+041.777  000.033  000.033: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/json5.vim
+041.902  000.030  000.030: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/julia.vim
+042.038  000.041  000.041: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/ledger.vim
+042.181  000.039  000.039: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/nix.vim
+042.321  000.041  000.041: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/ql.vim
+042.469  000.053  000.053: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/query.vim
+042.601  000.033  000.033: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/surface.vim
+042.819  000.048  000.048: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/teal.vim
+042.973  000.042  000.042: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/tlaplus.vim
+043.122  000.036  000.036: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/yang.vim
+043.257  000.035  000.035: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/ftdetect/zig.vim
+043.582  000.045  000.045: sourcing /Users/vivekrai/.config/nvim/plugged/nextflow-vim/ftdetect/nextflow.vim
+043.894  000.066  000.066: sourcing /Users/vivekrai/.config/nvim/plugged/vim-snakemake/ftdetect/snakemake.vim
+044.799  014.817  013.876: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/filetype.vim
+045.435  000.075  000.075: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/ftplugin.vim
+046.057  000.068  000.068: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/indent.vim
+046.935  000.137  000.137: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/syntax/synload.vim
+047.065  000.838  000.701: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/syntax/syntax.vim
+080.040  032.828  032.828: sourcing /Users/vivekrai/.config/nvim/plugins_config.vim
+086.359  003.977  003.977: sourcing /Users/vivekrai/.config/nvim/plugged/dracula.nvim/colors/dracula.lua
+090.649  003.061  003.061: sourcing /Users/vivekrai/.config/nvim/plugged/dracula.nvim/colors/dracula.lua
+090.687  078.608  020.455: sourcing /Users/vivekrai/.config/nvim/init.vim
+091.087  000.714: sourcing vimrc file(s)
+092.313  000.271  000.271: sourcing /Users/vivekrai/.config/nvim/plugged/vim-commentary/plugin/commentary.vim
+093.454  000.056  000.056: sourcing /Users/vivekrai/.config/nvim/plugged/indent-blankline.nvim/autoload/indent_blankline.vim
+093.870  001.213  001.157: sourcing /Users/vivekrai/.config/nvim/plugged/indent-blankline.nvim/plugin/indent_blankline.vim
+094.990  000.632  000.632: sourcing /Users/vivekrai/.config/nvim/plugged/vim-sleuth/plugin/sleuth.vim
+095.553  000.182  000.182: sourcing /Users/vivekrai/.config/nvim/plugged/vim-MvVis/plugin/MvVis.vim
+097.053  000.389  000.389: sourcing /Users/vivekrai/.config/nvim/plugged/coc.nvim/autoload/coc/rpc.vim
+098.781  001.049  001.049: sourcing /Users/vivekrai/.config/nvim/plugged/coc.nvim/autoload/coc/util.vim
+099.934  000.391  000.391: sourcing /Users/vivekrai/.config/nvim/plugged/coc.nvim/autoload/coc/client.vim
+106.614  010.723  008.894: sourcing /Users/vivekrai/.config/nvim/plugged/coc.nvim/plugin/coc.vim
+107.792  000.759  000.759: sourcing /Users/vivekrai/.config/nvim/plugged/vim-eunuch/plugin/eunuch.vim
+108.817  000.643  000.643: sourcing /Users/vivekrai/.config/nvim/plugged/vim-surround/plugin/surround.vim
+110.247  000.206  000.206: sourcing /Users/vivekrai/.config/nvim/plugged/vim-mundo/autoload/mundo/util.vim
+110.605  001.119  000.914: sourcing /Users/vivekrai/.config/nvim/plugged/vim-mundo/plugin/mundo.vim
+111.019  000.052  000.052: sourcing /Users/vivekrai/.config/nvim/plugged/rainbow/plugin/rainbow_main.vim
+111.421  000.041  000.041: sourcing /Users/vivekrai/.config/nvim/plugged/which-key.nvim/plugin/which-key.vim
+112.133  000.235  000.235: sourcing /Users/vivekrai/.config/nvim/plugged/vim-smoothie/plugin/smoothie.vim
+112.877  000.379  000.379: sourcing /Users/vivekrai/.config/nvim/plugged/vim-choosewin/plugin/choosewin.vim
+113.314  000.080  000.080: sourcing /Users/vivekrai/.config/nvim/plugged/plenary.nvim/plugin/plenary.vim
+113.863  000.227  000.227: sourcing /Users/vivekrai/.config/nvim/plugged/telescope.nvim/plugin/telescope.vim
+116.035  001.711  001.711: sourcing /Users/vivekrai/.config/nvim/plugged/vim-sneak/plugin/sneak.vim
+116.768  000.394  000.394: sourcing /Users/vivekrai/.config/nvim/plugged/copilot.vim/plugin/copilot.vim
+117.424  000.275  000.275: sourcing /Users/vivekrai/.config/nvim/plugged/vim-oscyank/plugin/oscyank.vim
+119.465  000.142  000.142: sourcing /Users/vivekrai/.config/nvim/plugged/barbar.nvim/autoload/bufferline/highlight.vim
+129.402  011.643  011.501: sourcing /Users/vivekrai/.config/nvim/plugged/barbar.nvim/plugin/bufferline.vim
+140.305  010.512  010.512: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter/plugin/nvim-treesitter.vim
+143.766  003.021  003.021: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-treesitter-textobjects/plugin/nvim-treesitter-textobjects.vim
+145.116  000.949  000.949: sourcing /Users/vivekrai/.config/nvim/plugged/editorconfig-vim/plugin/editorconfig.vim
+145.584  000.109  000.109: sourcing /Users/vivekrai/.config/nvim/plugged/nvim-web-devicons/plugin/nvim-web-devicons.vim
+146.822  000.258  000.258: sourcing /Users/vivekrai/.config/nvim/plugged/vim-argwrap/autoload/argwrap.vim
+147.012  001.039  000.780: sourcing /Users/vivekrai/.config/nvim/plugged/vim-argwrap/plugin/argwrap.vim
+148.918  000.368  000.368: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/gzip.vim
+149.074  000.035  000.035: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/health.vim
+149.356  000.171  000.171: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/man.vim
+149.514  000.039  000.039: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/matchit.vim
+149.879  000.249  000.249: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/matchparen.vim
+150.047  000.046  000.046: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/netrwPlugin.vim
+151.511  000.371  000.371: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/autoload/remote/host.vim
+152.633  000.286  000.286: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/autoload/remote/define.vim
+154.012  003.502  002.844: sourcing /Users/vivekrai/.local/share/nvim/rplugin.vim
+154.040  003.876  000.375: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/rplugin.vim
+154.612  000.355  000.355: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/shada.vim
+154.801  000.044  000.044: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/spellfile.vim
+154.999  000.079  000.079: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/tarPlugin.vim
+155.161  000.041  000.041: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/tohtml.vim
+155.333  000.054  000.054: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/tutor.vim
+155.512  000.050  000.050: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/plugin/zipPlugin.vim
+161.264  018.557: loading rtp plugins
+161.569  000.305: loading packages
+161.664  000.095: loading after plugins
+161.695  000.032: inits 3
+167.142  005.446: reading ShaDa
+170.916  003.774: opening buffers
+171.383  000.467: BufEnter autocommands
+171.388  000.005: editing files in windows
+173.966  002.578: VimEnter autocommands
+173.970  000.004: UIEnter autocommands
+174.973  000.349  000.349: sourcing /usr/local/Cellar/neovim/HEAD-1dbbaf8/share/nvim/runtime/autoload/provider/clipboard.vim
+174.987  000.668: before starting main loop
+177.262  001.442  001.442: sourcing /Users/vivekrai/.config/nvim/plugged/coc.nvim/autoload/coc/float.vim
+201.557  025.127: first screen update
+201.562  000.005: --- NVIM STARTED ---
