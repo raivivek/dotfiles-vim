@@ -147,6 +147,9 @@ nnoremap <Leader>gu :GundoToggle<CR>
 " }}}
 
 " Coc {{{
+nnoremap <leader>co <cmd>CocAction<cr>
+vnoremap <leader>co <cmd>CocAction<cr>
+
 " Navigate snippet placeholders using tab
 let g:coc_snippet_next = '<Tab>'
 let g:coc_snippet_prev = '<S-Tab>'
@@ -201,9 +204,6 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 " format with available file format formatter
 command! -nargs=0 Format :call CocAction('format')
 
-" organize imports
-command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
-
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
@@ -211,8 +211,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>f <Plug>(coc-format-selected)
+nmap <leader>f <Plug>(coc-format-selected)
 " }}}
 
 " ChooseWin  {{{

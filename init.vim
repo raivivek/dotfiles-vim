@@ -51,7 +51,7 @@ if empty(glob(g:my_vim_dir . '/autoload/plug.vim'))
 endif
 
 " Setup plugins
-call plug#begin(g:my_vim_dir . '/plugged')
+call plug#begin(g:my_vim_dir . '/.plugged')
   " Always loaded
   Plug 'nvim-lualine/lualine.nvim' " lua line
   Plug 'tpope/vim-commentary' " Quickly comment and such
@@ -64,7 +64,6 @@ call plug#begin(g:my_vim_dir . '/plugged')
   Plug 'tpope/vim-repeat' " Repeats commands with `.`
   Plug 'tpope/vim-surround' " Surrounds text with characters
   Plug 'simnalamburt/vim-mundo' " Better undo and redo
-  Plug 'luochen1990/rainbow' " rainbow parenthesis
   Plug 'gregsexton/MatchTag' " highlight matching html tags
   Plug 'folke/which-key.nvim' " Visualize key-mappings
   Plug 'lewis6991/gitsigns.nvim' " Add git signs in gutter
@@ -82,9 +81,9 @@ call plug#begin(g:my_vim_dir . '/plugged')
   Plug 'winston0410/range-highlight.nvim'
   Plug 'justinmk/vim-sneak'
   Plug 'github/copilot.vim' " Copilot
-  Plug 'rafamadriz/friendly-snippets' " Snippets
   Plug 'ojroques/vim-oscyank'
-  Plug 'romgrk/barbar.nvim' " Vim-Barbar (tabline management)
+  Plug 'honza/vim-snippets'
+  Plug 'akinsho/bufferline.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'nvim-treesitter/nvim-treesitter-textobjects'
   "Plug 'neovim/nvim-lspconfig'
@@ -101,7 +100,6 @@ call plug#begin(g:my_vim_dir . '/plugged')
   Plug 'raivivek/vim-snakemake', { 'file' : 'snakemake'}
 call plug#end()
 " }}}
-
 
 " ====== Options, commands, and editor settings ====== "{{{
 "
@@ -198,6 +196,7 @@ set backspace=indent,eol,start  " Intuitive backspacing in insert mode
 set diffopt=filler,iwhite       " Diff mode: show fillers, ignore whitespace
 set clipboard=unnamedplus
 set complete=.                  " No wins, buffs, tags, include scanning
+set completeopt=menuone,noselect
 set nowrap                      " No wrap by default
 " }}}
 
@@ -264,3 +263,5 @@ hi clear SignColumn
 hi Comment gui=italic cterm=italic
 " }}}
 "}}}
+
+call s:source_file('mappings.vim')
