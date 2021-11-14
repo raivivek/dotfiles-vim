@@ -40,9 +40,9 @@ nnoremap <silent> [Window]t  :enew<CR>
 nnoremap <silent> [Window]o  :<C-u>only<CR>
 nnoremap <silent> [Window]D  :<C-u>call <SID>CustomBufferDelete()<CR>
 nnoremap <silent> [Window]x  :<C-u>call <SID>CustomBufferDeleteNew()<CR>
+nnoremap <silent> [Window]q  :close<CR>
+nnoremap <silent> [Window]Q  :bdelete<CR>
 nnoremap <silent> [Window]\  :b#<CR>
-nnoremap <silent> [Window]q  :BufferClose<CR>
-nnoremap <silent> [Window]Q  :BufferDelete<CR>
 nnoremap <silent> [Window]c :<C-u>call <SID>smart_close()<CR>
 
 nnoremap <silent> <Tab> :BufferNext<CR>
