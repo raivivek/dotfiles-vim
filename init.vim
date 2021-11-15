@@ -96,6 +96,7 @@ call plug#begin(g:my_vim_dir . '/.plugged')
   Plug 'editorconfig/editorconfig-vim'
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'FooSoft/vim-argwrap'
+  "Plug 'lervag/vimtex', { 'file': 'tex' }
   Plug 'raivivek/nextflow-vim', { 'file' : 'nextflow'}
   Plug 'raivivek/vim-snakemake', { 'file' : 'snakemake'}
 call plug#end()
