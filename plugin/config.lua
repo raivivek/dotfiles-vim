@@ -1,5 +1,6 @@
 require'nvim-autopairs'.setup()
 require("bufferline").setup{}
+require'lightspeed'.setup{}
 
 require'lualine'.setup {
   options = {

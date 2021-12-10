@@ -12,7 +12,7 @@ nnoremap <leader>fr <cmd>Telescope live_grep<cr>
 " General {{{
 " Window prefix
 nnoremap  [Window]   <Nop>
-nmap      s [Window]
+nmap      W [Window]
 
 " Start an external command with a single bang
 nnoremap ! :!
@@ -45,8 +45,8 @@ nnoremap <silent> [Window]Q  :bdelete<CR>
 nnoremap <silent> [Window]\  :b#<CR>
 nnoremap <silent> [Window]c :<C-u>call <SID>smart_close()<CR>
 
-nnoremap <silent> <Tab> :BufferNext<CR>
-nnoremap <silent> <S-Tab> :BufferPrev<CR>
+nnoremap <silent> <Tab> :BufferLineCycleNext<CR>
+nnoremap <silent> <S-Tab> :BufferLineCyclePrev<CR>
 
 " Split current buffer, go to previous window and previous buffer
 nnoremap <Leader>sv :split<CR>:wincmd p<CR>:e#<CR>
@@ -137,10 +137,6 @@ vnoremap <S-Tab> <gv
 nnoremap > >>_
 nnoremap < <<_
 "}}}
-
-" vim-sneak  {{{
-let g:sneak#label = 1
-" }}}
 
 " GundoTree  {{{
 nnoremap <Leader>gu :GundoToggle<CR>

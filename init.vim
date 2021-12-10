@@ -79,7 +79,7 @@ call plug#begin(g:my_vim_dir . '/.plugged')
   Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
   Plug 'winston0410/cmd-parser.nvim'
   Plug 'winston0410/range-highlight.nvim'
-  Plug 'justinmk/vim-sneak'
+  Plug 'ggandor/lightspeed.nvim'
   Plug 'github/copilot.vim' " Copilot
   Plug 'ojroques/vim-oscyank'
   Plug 'honza/vim-snippets'
@@ -97,6 +97,7 @@ call plug#begin(g:my_vim_dir . '/.plugged')
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'FooSoft/vim-argwrap'
   "Plug 'lervag/vimtex', { 'file': 'tex' }
+  Plug 'zah/nim.vim'
   Plug 'raivivek/nextflow-vim', { 'file' : 'nextflow'}
   Plug 'raivivek/vim-snakemake', { 'file' : 'snakemake'}
 call plug#end()
